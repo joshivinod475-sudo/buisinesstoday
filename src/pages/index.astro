@@ -1,0 +1,71 @@
+---
+import Base from '../layouts/Base.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import { SITE, CATEGORIES, getCategory } from '../site.config';
+import { getArticles, formatDate, readingTime } from '../lib/articles';
+
+const articles = await getArticles();
+const lead = articles.find((a) => a.data.featured) ?? articles[0];
+const others = articles.filter((a) => a !== lead);
+const side = others.slice(0, 4);
+const latest = others.slice(4, 10);
+const sections = CATEGORIES.map((c) => ({
+  ...c,
+  items: articles.filter((a) => a.data.category === c.slug && a !== lead).slice(0, 3),
+})).filter((s) => s.items.length > 0);
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: SITE.name,
+  url: SITE.url,
+  publisher: { '@type': 'Organization', name: SITE.name, url: SITE.url, logo: `${SITE.url}/favicon.svg` },
+};
+---
+<Base jsonLd={jsonLd}>
+  <h1 class="sr-only">{SITE.name}: {SITE.tagline}</h1>
+  {!lead && <p class="empty">No articles yet. Add one in <code>src/content/articles/</code>.</p>}
+  {lead && (
+    <section class="lead-grid">
+      <div class="lead" style={`--cat:${getCategory(lead.data.category).color}`}>
+        <a href={`/articles/${lead.id}/`} class="card-art" style="display:block" tabindex="-1" aria-hidden="true">
+          {lead.data.image
+            ? <img src={lead.data.image} alt={lead.data.imageAlt ?? ''} />
+            : <span class="glyph">{getCategory(lead.data.category).name}</span>}
+        </a>
+        <div style="margin-top:16px">
+          <a class="kicker" href={`/category/${lead.data.category}/`}>{getCategory(lead.data.category).name}</a>
+          <h2><a href={`/articles/${lead.id}/`}>{lead.data.title}</a></h2>
+          <p>{lead.data.description}</p>
+          <div class="meta"><span>{formatDate(lead.data.date)}</span><span>{readingTime(lead.body)}</span></div>
+        </div>
+      </div>
+      <ul class="side-list" aria-label="Top stories">
+        {side.map((a) => (
+          <li style={`--cat:${getCategory(a.data.category).color}`}>
+            <a class="kicker" href={`/category/${a.data.category}/`}>{getCategory(a.data.category).name}</a>
+            <h3><a href={`/articles/${a.id}/`}>{a.data.title}</a></h3>
+            <div class="meta"><span>{formatDate(a.data.date)}</span><span>{readingTime(a.body)}</span></div>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+
+  {latest.length > 0 && (
+    <section>
+      <div class="section-head"><h2>Latest</h2></div>
+      <div class="grid">{latest.map((a) => <ArticleCard article={a} />)}</div>
+    </section>
+  )}
+
+  {sections.map((s) => (
+    <section>
+      <div class="section-head">
+        <h2>{s.name}</h2>
+        <a href={`/category/${s.slug}/`}>More {s.name} →</a>
+      </div>
+      <div class="grid">{s.items.map((a) => <ArticleCard article={a} />)}</div>
+    </section>
+  ))}
+</Base>

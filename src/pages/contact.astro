@@ -1,0 +1,16 @@
+---
+import Page from '../layouts/Page.astro';
+import { SITE } from '../site.config';
+---
+<Page title="Contact us" description={`How to reach the ${SITE.name} team.`}>
+  <p>We read every message. The quickest way to reach us is by email:</p>
+  <p style="font-size:22px"><a href={`mailto:${SITE.email}`}>{SITE.email}</a></p>
+  <h2>What to write to us about</h2>
+  <ul>
+    <li><strong>News tips:</strong> tell us what you know and how we can verify it.</li>
+    <li><strong>Corrections:</strong> include the article link and what needs fixing.</li>
+    <li><strong>Advertising and partnerships:</strong> put "Partnership" in the subject line.</li>
+    <li><strong>Contributor pitches:</strong> send a short outline and links to your previous work.</li>
+  </ul>
+  <p>We aim to reply within two working days.</p>
+</Page>

@@ -1,0 +1,23 @@
+---
+import Page from '../layouts/Page.astro';
+import { SITE, CATEGORIES } from '../site.config';
+---
+<Page title="About us" description={`What ${SITE.name} covers, how we work and how to reach us.`}>
+  <p><strong>{SITE.name}</strong> is an independent publication covering business, markets and money. Our goal is simple: explain what is happening in the economy and why it matters to you, in plain language.</p>
+
+  <h2>What we cover</h2>
+  <ul>{CATEGORIES.map((c) => <li><a href={`/category/${c.slug}/`}>{c.name}</a></li>)}</ul>
+
+  <h2>Our editorial standards</h2>
+  <ul>
+    <li><strong>Accuracy first.</strong> We check facts against primary sources such as regulators, company filings and official statistics, and link to them wherever we can.</li>
+    <li><strong>Independence.</strong> Sponsored or partner content is always clearly labelled. Advertisers do not influence our editorial coverage.</li>
+    <li><strong>Corrections.</strong> If we get something wrong, we fix it and note the correction on the article. Spotted an error? Email <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.</li>
+    <li><strong>No advice.</strong> We explain; we do not tell you what to buy or sell. Please read our <a href="/disclaimer/">disclaimer</a>.</li>
+  </ul>
+
+  <p>{SITE.name} is an independent website and is not affiliated with any other publication or media group with a similar name.</p>
+
+  <h2>Contact</h2>
+  <p>Story tips, feedback and partnership enquiries: <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.</p>
+</Page>

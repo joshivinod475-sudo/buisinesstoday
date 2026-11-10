@@ -1,0 +1,18 @@
+---
+import { getCategory } from '../site.config';
+import { formatDate, type Article } from '../lib/articles';
+
+interface Props { article: Article }
+const { article } = Astro.props;
+const { title, description, date, category, image, imageAlt } = article.data;
+const cat = getCategory(category);
+---
+<article class="card" style={`--cat:${cat.color}`}>
+  <a href={`/articles/${article.id}/`} class="card-art" tabindex="-1" aria-hidden="true">
+    {image ? <img src={image} alt={imageAlt ?? ''} loading="lazy" /> : <span class="glyph">{cat.name}</span>}
+  </a>
+  <a class="kicker" href={`/category/${cat.slug}/`}>{cat.name}</a>
+  <h3><a href={`/articles/${article.id}/`}>{title}</a></h3>
+  <p>{description}</p>
+  <div class="meta"><span>{formatDate(date)}</span></div>
+</article>

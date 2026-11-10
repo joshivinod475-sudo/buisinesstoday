@@ -1,0 +1,28 @@
+---
+import Page from '../layouts/Page.astro';
+import { SITE } from '../site.config';
+---
+<Page title="Terms of use" description={`The terms that apply when you use ${SITE.name}.`} updated="10 November 2026">
+  <p>By using {SITE.name} you agree to these terms. If you do not agree, please do not use the site.</p>
+
+  <h2>Content and copyright</h2>
+  <p>All articles, graphics and design on this site are owned by {SITE.name} or used with permission. You may share links and quote short extracts with clear credit and a link to the original article. Republishing full articles requires our written permission.</p>
+
+  <h2>No advice</h2>
+  <p>Content is provided for general information only and is not financial, investment, tax or legal advice. See our <a href="/disclaimer/">disclaimer</a>.</p>
+
+  <h2>Accuracy</h2>
+  <p>We work hard to be accurate but cannot guarantee that all information is complete or up to date. Figures, rates and rules change; always check official sources before acting.</p>
+
+  <h2>External links</h2>
+  <p>We link to third-party websites for reference. We do not control and are not responsible for their content.</p>
+
+  <h2>Limitation of liability</h2>
+  <p>To the fullest extent permitted by law, {SITE.name} is not liable for any loss arising from your use of, or reliance on, this website.</p>
+
+  <h2>Governing law</h2>
+  <p>These terms are governed by the laws of India.</p>
+
+  <h2>Contact</h2>
+  <p><a href={`mailto:${SITE.email}`}>{SITE.email}</a></p>
+</Page>

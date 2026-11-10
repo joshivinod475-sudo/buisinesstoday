@@ -1,0 +1,68 @@
+---
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+import { SITE, getCategory } from '../../site.config';
+import { getArticles, formatDate, readingTime, type Article } from '../../lib/articles';
+
+export async function getStaticPaths() {
+  const articles = await getArticles();
+  return articles.map((article) => ({ params: { slug: article.id }, props: { article, all: articles } }));
+}
+
+interface Props { article: Article; all: Article[] }
+const { article, all } = Astro.props;
+const { title, description, date, updated, category, author, image, imageAlt } = article.data;
+const { Content } = await render(article);
+const cat = getCategory(category);
+const url = new URL(Astro.url.pathname, Astro.site).href;
+const related = all.filter((a) => a.id !== article.id && a.data.category === category).slice(0, 3);
+const more = related.length ? related : all.filter((a) => a.id !== article.id).slice(0, 3);
+const enc = encodeURIComponent;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'NewsArticle',
+  headline: title,
+  description,
+  datePublished: date.toISOString(),
+  dateModified: (updated ?? date).toISOString(),
+  author: { '@type': 'Person', name: author },
+  publisher: { '@type': 'Organization', name: SITE.name, logo: { '@type': 'ImageObject', url: `${SITE.url}/favicon.svg` } },
+  mainEntityOfPage: url,
+  articleSection: cat.name,
+  ...(image ? { image: [new URL(image, SITE.url).href] } : {}),
+};
+---
+<Base title={title} description={description} image={image} type="article" jsonLd={jsonLd}>
+  <article class="article" style={`--cat:${cat.color}`}>
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href={`/category/${cat.slug}/`}>{cat.name}</a></nav>
+    <span class="kicker">{cat.name}</span>
+    <h1>{title}</h1>
+    <p class="dek">{description}</p>
+    <div class="byline">
+      <span>By <strong>{author}</strong></span>
+      <time datetime={date.toISOString()}>{formatDate(date)}</time>
+      {updated && <span>Updated <time datetime={updated.toISOString()}>{formatDate(updated)}</time></span>}
+      <span>{readingTime(article.body)}</span>
+    </div>
+    {image && <figure class="hero"><img src={image} alt={imageAlt ?? ''} /></figure>}
+    <div class="prose" style="margin-top:24px"><Content /></div>
+
+    <p class="note">This article is for general information only and is not financial, investment or legal advice. See our <a href="/disclaimer/" style="color:var(--link)">disclaimer</a>.</p>
+
+    <div class="share">
+      <strong>Share:</strong>
+      <a href={`https://wa.me/?text=${enc(title + ' ' + url)}`} target="_blank" rel="noopener">WhatsApp</a>
+      <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${enc(url)}`} target="_blank" rel="noopener">LinkedIn</a>
+      <a href={`https://x.com/intent/post?text=${enc(title)}&url=${enc(url)}`} target="_blank" rel="noopener">X</a>
+    </div>
+  </article>
+
+  {more.length > 0 && (
+    <section>
+      <div class="section-head"><h2>{related.length ? `More in ${cat.name}` : 'Read next'}</h2></div>
+      <div class="grid">{more.map((a) => <ArticleCard article={a} />)}</div>
+    </section>
+  )}
+</Base>

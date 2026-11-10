@@ -1,0 +1,19 @@
+---
+import Base from '../../layouts/Base.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+import { CATEGORIES } from '../../site.config';
+import { getArticles } from '../../lib/articles';
+
+export function getStaticPaths() {
+  return CATEGORIES.map((c) => ({ params: { cat: c.slug }, props: { cat: c } }));
+}
+
+const { cat } = Astro.props;
+const items = (await getArticles()).filter((a) => a.data.category === cat.slug);
+---
+<Base title={cat.name} description={`The latest ${cat.name.toLowerCase()} news and explainers.`}>
+  <div class="section-head" style="margin-top:0"><h1 style="font:700 30px/1.2 var(--serif);margin:0">{cat.name}</h1></div>
+  {items.length
+    ? <div class="grid">{items.map((a) => <ArticleCard article={a} />)}</div>
+    : <p class="empty">No {cat.name} stories yet. Check back soon.</p>}
+</Base>
