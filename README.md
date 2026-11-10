@@ -1,4 +1,4 @@
-# Buisiness Today
+# BizPulse Daily
 
 Source code for **https://buisinesstoday.com**, a fast static news site built with [Astro](https://astro.build).
 
