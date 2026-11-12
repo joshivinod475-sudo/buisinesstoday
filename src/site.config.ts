@@ -2,10 +2,10 @@
 //  SITE SETTINGS — change your name, tagline, email here.
 // ─────────────────────────────────────────────────────────────
 export const SITE = {
-  name: 'BizPulse Daily',
+  name: 'buisinesstoday',
   tagline: 'Business, markets and money, explained clearly.',
   description:
-    'BizPulse Daily covers markets, the economy, startups, technology and personal finance with clear, independent explainers.',
+    'buisinesstoday covers markets, the economy, startups, technology and personal finance with clear, independent explainers.',
   url: 'https://buisinesstoday.com',
   email: 'contact@buisinesstoday.com',
   locale: 'en-IN',
