@@ -3,6 +3,8 @@ title: "How to Read a Company's Quarterly Results in Five Minutes"
 description: "Revenue, EBITDA, margins, profit: a quick checklist for making sense of the earnings numbers that move stock prices."
 date: 2026-11-09
 category: markets
+image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1200&q=80"
+imageAlt: "Stock market data and charts on a laptop screen"
 ---
 
 Listed companies in India publish financial results every quarter. Headlines often say a company "beat" or "missed" estimates, but the results document itself can look like a wall of numbers. You only need to check five things.
