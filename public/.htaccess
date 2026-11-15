@@ -2,6 +2,10 @@ Options -Indexes
 DirectoryIndex index.html
 ErrorDocument 404 /404.html
 
+# Sitemaps and the RSS feed are sent as "application/xml; charset=utf-8"
+AddType application/xml .xml
+AddCharset utf-8 .xml
+
 RewriteEngine On
 
 # Never expose the git folder or repo files (Hostinger's Git deploy clones .git into public_html)

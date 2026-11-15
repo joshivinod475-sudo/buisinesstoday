@@ -3,7 +3,7 @@ title: "How Startups Raise Money: From Bootstrapping to Series A"
 description: "Pre-seed, seed, angels, VCs, dilution: a founder-friendly map of the funding journey and what each stage expects."
 date: 2026-11-08
 category: funding
-image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=1200&q=80"
+image: /images/startup-team-working-in-office.jpg
 imageAlt: "Startup founders and investors reviewing a pitch deck at a table"
 ---
 

@@ -66,9 +66,12 @@ npm run dev      # then open http://localhost:4321
 
 | What | Address |
 |---|---|
-| Sitemap index (submit this one in Search Console) | `/sitemap-index.xml` |
-| All pages, with last-changed dates and images | `/sitemap.xml` |
-| Google News sitemap (stories from the last 2 days) | `/news-sitemap.xml` |
+| Sitemap index (submit this one in Search Console) | `/sitemap_index.xml` |
+| Google News sitemap (stories from the last 48 hours) | `/news-sitemap.xml` |
+| One sitemap per publishing day, with last-updated times and images | `/sitemap/sitemap-daily-YYYY-MM-DD.xml` |
+| Category and subcategory pages that have stories | `/sitemap/sitemap-categories.xml` |
+| Home page, about/contact/legal pages, author pages | `/sitemap/sitemap-pages.xml` |
+| Older addresses, still working (same content as the index) | `/sitemap.xml`, `/sitemap-index.xml` |
 | RSS feed | `/rss.xml` |
 | Crawler rules | `/robots.txt` |
 
@@ -97,5 +100,6 @@ The menu, mobile menu, dropdowns, category pages, breadcrumbs, article badges an
 | Article page | `src/pages/[category]/[slug].astro` |
 | About / Contact / Editorial standards / legal pages | `src/pages/*.astro` |
 | Structured data (schema) | `src/lib/schema.ts` |
+| Sitemaps | `src/lib/sitemaps.ts` and `src/pages/sitemap*`, `src/pages/sitemap/` |
 | Image sizes | `src/lib/images.ts` and `scripts/make-images.mjs` |
 | Server rules (HTTPS, caching, redirects) | `public/.htaccess` |

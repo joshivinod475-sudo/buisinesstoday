@@ -20,5 +20,5 @@ User-agent: CCBot
 User-agent: meta-externalagent
 Allow: /
 
-Sitemap: https://buisinesstoday.com/sitemap.xml
+Sitemap: https://buisinesstoday.com/sitemap_index.xml
 Sitemap: https://buisinesstoday.com/news-sitemap.xml

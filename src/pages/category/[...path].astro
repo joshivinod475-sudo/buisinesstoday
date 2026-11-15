@@ -57,7 +57,7 @@ const jsonLd = [
 ---
 <Base title={title} rawTitle description={description} section={top.slug} jsonLd={jsonLd}
   image={items[0] ? img(items[0].data.image, 1200, 675) : undefined} imageAlt={items[0]?.data.imageAlt}
-  noindex={total === 0}>
+  noindex={total === 0 || isAll /* "All News" repeats every other listing, so it is kept out of Google and the sitemaps */}>
   <nav class="crumbs" aria-label="Breadcrumb">
     <a href="/">Home</a> ›
     {cat.parent && <><a href={categoryUrl(top)}>{top.name}</a> › </>}

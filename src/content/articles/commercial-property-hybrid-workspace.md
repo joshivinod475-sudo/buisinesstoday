@@ -3,7 +3,7 @@ title: "Hybrid Work Is Reshaping Commercial Property as Landlords Adapt to a New
 description: "Hybrid work is changing commercial property demand, tenant expectations, and office space design. Here’s how landlords, investors, and occupiers are adapting to the new normal."
 date: 2026-11-12
 category: property
-image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80"
+image: /images/glass-office-towers-low-angle.jpg
 imageAlt: "Low-angle view of glass office towers against a pale sky"
 ---
 

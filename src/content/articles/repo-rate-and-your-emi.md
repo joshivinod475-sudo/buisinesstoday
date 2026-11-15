@@ -3,7 +3,7 @@ title: "What the Repo Rate Is, and Why It Moves Your Home Loan EMI"
 description: "When the RBI changes the repo rate, millions of loan EMIs follow. Here is how that chain works, in plain English."
 date: 2026-11-10
 category: personal-finance
-image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1200&q=80"
+image: /images/laptop-on-cafe-table.jpg
 imageAlt: "Bank building with a financial district skyline in the background"
 ---
 

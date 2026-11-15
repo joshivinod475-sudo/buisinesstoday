@@ -3,7 +3,7 @@ title: "Index Funds vs Actively Managed Funds: A Plain-English Guide"
 description: "Should a fund manager pick your stocks, or should you just buy the whole market? Costs, risks and who each option suits."
 date: 2026-11-06
 category: personal-finance
-image: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=80"
+image: /images/person-at-laptop-with-card-terminal.jpg
 imageAlt: "Close-up of a stack of Indian rupee notes and coins on a table"
 ---
 

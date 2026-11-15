@@ -3,7 +3,7 @@ title: "Mental Health Warning Signs: 6 Symptoms to Watch For and How to Get Help
 description: "Sleep changes, pulling away from people, slipping at work: psychiatrists say these signs matter when they last over two weeks. Here is what to look for and where to get help."
 date: 2026-11-15T13:55:00+05:30
 category: healthcare
-image: "https://images.unsplash.com/photo-1758273241078-8eec353836be"
+image: /images/counsellor-therapy-session.jpg
 imageAlt: "A counsellor with a notepad listens to a woman during a therapy session in a bright room"
 imageCredit: "A counselling session. Photo: Vitaly Gariev / Unsplash"
 tags: ["Mental Health", "Tele MANAS", "Depression", "Anxiety", "Health Insurance", "Workplace Wellbeing"]

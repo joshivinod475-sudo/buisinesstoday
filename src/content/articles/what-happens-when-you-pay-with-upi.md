@@ -3,7 +3,7 @@ title: "What Actually Happens When You Tap 'Pay' on UPI"
 description: "A UPI payment takes seconds, but it passes through several parties. Here's the journey of your money, step by step."
 date: 2026-11-07
 category: tech
-image: "https://images.unsplash.com/photo-1516321165247-4aa89a48be28?auto=format&fit=crop&w=1200&q=80"
+image: /images/hand-typing-on-laptop.jpg
 imageAlt: "Hands using a mobile payment app on a smartphone"
 ---
 
