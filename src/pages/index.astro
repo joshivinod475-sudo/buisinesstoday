@@ -11,7 +11,8 @@ const homeTitle = 'Business News Today: Markets, Economy & Company News';
 const homeDescription = 'Buisinesstoday: the latest business news on world markets, finance, technology and AI, startups and real estate, reported clearly and checked against sources.';
 
 const articles = await getArticles();
-const lead = articles.find((a) => a.data.featured) ?? articles[0];
+// The newest article always leads the home page.
+const lead = articles[0];
 const others = articles.filter((a) => a !== lead);
 const picks = others.slice(0, 3);
 const focus = others.slice(3, 7);

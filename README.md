@@ -29,7 +29,6 @@ You never upload files by hand. The site also rebuilds by itself once a day, so 
    tags: ["Gold", "Commodities"]          # optional topics
    # author: "Your Name"                  (optional: default is Editorial Desk)
    # updated: 2026-11-16T10:00:00+05:30   (optional: add when you change a published story)
-   # featured: true                       (optional: pins it to the top of the home page)
    # draft: true                          (optional: hides it until you remove this line)
    ---
 
