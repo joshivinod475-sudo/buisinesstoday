@@ -47,4 +47,7 @@ RewriteRule ^health/(.+)$ /healthcare/$1 [L,R=301]
   <FilesMatch "\.(html|xml)$">
     Header set Cache-Control "public, max-age=300"
   </FilesMatch>
+  <FilesMatch "\.xml$">
+    Header set Content-Type "application/xml; charset=utf-8"
+  </FilesMatch>
 </IfModule>
