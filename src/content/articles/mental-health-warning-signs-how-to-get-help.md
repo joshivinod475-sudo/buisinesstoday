@@ -1,7 +1,7 @@
 ---
 title: "Mental Health Warning Signs: 6 Symptoms to Watch For and How to Get Help in India"
 description: "Sleep changes, pulling away from people, slipping at work: psychiatrists say these signs matter when they last over two weeks. Here is what to look for and where to get help."
-date: 2026-11-15T14:15:00+05:30
+date: 2026-11-15T13:55:00+05:30
 category: health
 image: "https://images.unsplash.com/photo-1758273241078-8eec353836be"
 imageAlt: "A counsellor with a notepad listens to a woman during a therapy session in a bright room"
