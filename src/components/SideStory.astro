@@ -1,0 +1,21 @@
+---
+import { getCategory } from '../site.config';
+import { formatDate, isoDate, articleUrl, type Article } from '../lib/articles';
+import { img } from '../lib/images';
+
+interface Props { article: Article }
+const { article } = Astro.props;
+const { title, date, category, image, imageAlt } = article.data;
+const cat = getCategory(category);
+const url = articleUrl(article);
+---
+<article class="side-story" style={`--cat:${cat.color}`}>
+  <a href={url} class="side-thumb" tabindex="-1" aria-hidden="true">
+    <img src={img(image, 400, 400)} width="400" height="400" alt={imageAlt} loading="lazy" decoding="async" />
+  </a>
+  <div>
+    <span class="kicker">{cat.name}</span>
+    <h3><a href={url}>{title}</a></h3>
+    <time class="side-date" datetime={isoDate(date)}>{formatDate(date)}</time>
+  </div>
+</article>

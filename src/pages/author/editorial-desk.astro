@@ -1,0 +1,30 @@
+---
+import Base from '../../layouts/Base.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+import { SITE, DESK } from '../../site.config';
+import { getArticles, articleUrl } from '../../lib/articles';
+import { abs } from '../../lib/images';
+import { collectionPage, breadcrumbs } from '../../lib/schema';
+
+const items = (await getArticles()).filter((a) => a.data.author === DESK.name);
+const url = `${SITE.url}/author/${DESK.slug}/`;
+const description = `Stories by the ${DESK.name}, the in-house news team of ${SITE.name}.`;
+const jsonLd = [
+  collectionPage({ url, name: DESK.name, description, items: items.slice(0, 20).map((a) => ({ url: abs(articleUrl(a)), name: a.data.title })) }),
+  breadcrumbs([{ name: 'Home', url: `${SITE.url}/` }, { name: DESK.name, url }]),
+];
+---
+<Base title={DESK.name} description={description} jsonLd={jsonLd}>
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <span>{DESK.name}</span></nav>
+  <div class="author-box author-page">
+    <img src="/icon-192.png" width="96" height="96" alt="" />
+    <div>
+      <h1>{DESK.name}</h1>
+      <p class="author-role">{DESK.role}</p>
+      <p>{DESK.bio}</p>
+      <p>Read our <a href="/editorial-standards/">editorial standards</a>, or write to us at <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.</p>
+    </div>
+  </div>
+  <div class="section-head"><h2>Latest from the {DESK.name}</h2></div>
+  <div class="grid">{items.map((a) => <ArticleCard article={a} />)}</div>
+</Base>

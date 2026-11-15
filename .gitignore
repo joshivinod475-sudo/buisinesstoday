@@ -6,3 +6,6 @@ dist/
 .DS_Store
 Thumbs.db
 npm-debug.log*
+
+# Image crops are generated at build time by scripts/make-images.mjs
+public/images/v/

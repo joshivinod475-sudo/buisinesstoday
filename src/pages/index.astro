@@ -1,74 +1,97 @@
 ---
 import Base from '../layouts/Base.astro';
 import ArticleCard from '../components/ArticleCard.astro';
+import SideStory from '../components/SideStory.astro';
 import { SITE, CATEGORIES, getCategory } from '../site.config';
-import { getArticles, formatDate, readingTime } from '../lib/articles';
+import { getArticles, formatDate, isoDate, readingTime, articleUrl, lastModified } from '../lib/articles';
+import { img, srcset, abs } from '../lib/images';
+import { collectionPage } from '../lib/schema';
 
-const homeTitle = 'Business News, Markets & Money Explained';
-const homeDescription = 'Get clear, expert coverage of business news, markets, the economy, startups, technology and personal finance from Buisinesstoday.';
+const homeTitle = 'Business News Today: Markets, Economy & Company News';
+const homeDescription = 'Buisinesstoday: the latest business news on world markets, finance, technology and AI, startups and real estate, reported clearly and checked against sources.';
 
 const articles = await getArticles();
 const lead = articles.find((a) => a.data.featured) ?? articles[0];
 const others = articles.filter((a) => a !== lead);
-const side = others.slice(0, 4);
-const latest = others.slice(4, 10);
+const picks = others.slice(0, 3);
+const focus = others.slice(3, 7);
+const latest = others.slice(0, 6);
 const sections = CATEGORIES.map((c) => ({
   ...c,
-  items: articles.filter((a) => a.data.category === c.slug && a !== lead).slice(0, 3),
+  items: articles.filter((a) => a.data.category === c.slug).slice(0, 3),
 })).filter((s) => s.items.length > 0);
+const updated = articles.length ? new Date(Math.max(...articles.map((a) => lastModified(a).getTime()))) : new Date();
+const leadCat = lead && getCategory(lead.data.category);
 
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  name: SITE.name,
-  url: SITE.url,
-  publisher: { '@type': 'Organization', name: SITE.name, url: SITE.url, logo: `${SITE.url}/favicon.svg` },
-};
+const jsonLd = collectionPage({
+  url: `${SITE.url}/`,
+  name: homeTitle,
+  description: homeDescription,
+  items: articles.slice(0, 10).map((a) => ({ url: abs(articleUrl(a)), name: a.data.title })),
+});
 ---
-<Base title={homeTitle} description={homeDescription} jsonLd={jsonLd}>
-  <h1 class="sr-only">{SITE.name}: {SITE.tagline}</h1>
+<Base title={homeTitle} rawTitle description={homeDescription} image={lead ? img(lead.data.image, 1200, 675) : undefined} imageAlt={lead?.data.imageAlt} jsonLd={jsonLd}>
+  <section class="intro">
+    <h1>Today's Business News</h1>
+    <p>{SITE.name} reports on world business, markets and finance, technology, startups and real estate. Every story is checked against published sources. <span class="intro-updated">Updated <time datetime={isoDate(updated)}>{formatDate(updated)}</time>.</span></p>
+  </section>
+
+  <nav class="pills" aria-label="Browse news by section">
+    <a class="pill active" href="/category/all/">All News</a>
+    {CATEGORIES.map((c) => <a class="pill" href={`/category/${c.slug}/`}>{c.name}</a>)}
+  </nav>
+
   {!lead && <p class="empty">No articles yet. Add one in <code>src/content/articles/</code>.</p>}
-  {lead && (
-    <section class="lead-grid">
-      <div class="lead" style={`--cat:${getCategory(lead.data.category).color}`}>
-        <a href={`/articles/${lead.id}/`} class="card-art" style="display:block" tabindex="-1" aria-hidden="true">
-          {lead.data.image
-            ? <img src={lead.data.image} alt={lead.data.imageAlt ?? ''} />
-            : <span class="glyph">{getCategory(lead.data.category).name}</span>}
+  {lead && leadCat && (
+    <section class="hero-grid" aria-label="Top stories">
+      <article class="lead" style={`--cat:${leadCat.color}`}>
+        <a href={articleUrl(lead)} class="lead-art" tabindex="-1" aria-hidden="true">
+          <span class="badge">{leadCat.name}</span>
+          <img src={img(lead.data.image, 1600, 900)} srcset={srcset(lead.data.image)} sizes="(max-width: 900px) calc(100vw - 32px), 760px" width="1600" height="900" alt={lead.data.imageAlt} loading="eager" fetchpriority="high" />
         </a>
-        <div style="margin-top:16px">
-          <a class="kicker" href={`/category/${lead.data.category}/`}>{getCategory(lead.data.category).name}</a>
-          <h2><a href={`/articles/${lead.id}/`}>{lead.data.title}</a></h2>
-          <p>{lead.data.description}</p>
-          <div class="meta"><span>{formatDate(lead.data.date)}</span><span>{readingTime(lead.body)}</span></div>
-        </div>
-      </div>
-      <ul class="side-list" aria-label="Top stories">
-        {side.map((a) => (
-          <li style={`--cat:${getCategory(a.data.category).color}`}>
-            <a class="kicker" href={`/category/${a.data.category}/`}>{getCategory(a.data.category).name}</a>
-            <h3><a href={`/articles/${a.id}/`}>{a.data.title}</a></h3>
-            <div class="meta"><span>{formatDate(a.data.date)}</span><span>{readingTime(a.body)}</span></div>
-          </li>
+        <h2><a href={articleUrl(lead)}>{lead.data.title}</a></h2>
+        <p>{lead.data.description}</p>
+        <div class="meta"><span>{lead.data.author}</span><time datetime={isoDate(lead.data.date)}>{formatDate(lead.data.date)}</time><span>{readingTime(lead.body)}</span></div>
+      </article>
+      <aside class="picks" aria-label="Editor's picks">
+        <div class="subhead"><h2>Editor's Picks</h2></div>
+        {picks.map((a) => <SideStory article={a} />)}
+      </aside>
+    </section>
+  )}
+
+  {focus.length > 0 && (
+    <section class="focus" aria-label="In focus">
+      <div class="subhead"><h2>In Focus</h2></div>
+      <div class="focus-grid">
+        {focus.map((a, i) => (
+          <div class="focus-item" style={`--cat:${getCategory(a.data.category).color}`}>
+            <span class="focus-num" aria-hidden="true">{i + 1}</span>
+            <div>
+              <span class="kicker">{getCategory(a.data.category).name}</span>
+              <h3><a href={articleUrl(a)}>{a.data.title}</a></h3>
+              <span class="side-date">{readingTime(a.body)}</span>
+            </div>
+          </div>
         ))}
-      </ul>
+      </div>
     </section>
   )}
 
   {latest.length > 0 && (
-    <section>
-      <div class="section-head"><h2>Latest</h2></div>
+    <section aria-label="Latest stories">
+      <div class="section-head"><h2>Latest Business News</h2><a href="/category/all/">View All →</a></div>
       <div class="grid">{latest.map((a) => <ArticleCard article={a} />)}</div>
     </section>
   )}
 
   {sections.map((s) => (
-    <section>
-      <div class="section-head">
+    <section aria-label={s.name}>
+      <div class="section-head" style={`--cat:${s.color}`}>
         <h2>{s.name}</h2>
         <a href={`/category/${s.slug}/`}>More {s.name} →</a>
       </div>
-      <div class="grid">{s.items.map((a) => <ArticleCard article={a} />)}</div>
+      <div class="grid">{s.items.map((a) => <ArticleCard article={a} excerpt={false} />)}</div>
     </section>
   ))}
 </Base>

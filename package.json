@@ -1,17 +1,20 @@
 {
-  "name": "bizpulse-daily",
+  "name": "buisinesstoday",
   "type": "module",
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "images": "node scripts/make-images.mjs",
+    "predev": "npm run images",
     "dev": "astro dev",
+    "prebuild": "npm run images",
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.19",
-    "@astrojs/sitemap": "^3.7.4",
-    "astro": "^5.18.2"
+    "astro": "^5.18.2",
+    "sharp": "^0.35.5"
   }
 }

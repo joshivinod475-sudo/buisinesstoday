@@ -5,6 +5,10 @@ name: Build and deploy
 on:
   push:
     branches: [main]
+  # Rebuild once a day (06:30 India time) so the Google News sitemap only
+  # lists stories from the last two days.
+  schedule:
+    - cron: '0 1 * * *'
   workflow_dispatch:
 
 permissions:

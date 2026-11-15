@@ -1,11 +1,12 @@
 ---
 title: "Lalit Modi Becomes British Citizen 16 Years After Leaving India: What It Means for the IPL Founder"
 description: "IPL founder Lalit Modi says he is now a British citizen and chose the Oxford Union to announce it. Here is what he said, the legal background, and what it means for his planned India visit."
-date: 2026-11-15
-category: economy
+date: 2026-11-15T12:30:00+05:30
+category: world
 image: /images/lalit-modi-british-citizenship-westminster-london.jpg
 imageAlt: "The Palace of Westminster and Big Ben seen across the River Thames in London at dusk"
-featured: true
+imageCredit: "The Palace of Westminster in London. Photo: Pixabay / Wikimedia Commons (CC0)"
+tags: ["Lalit Modi", "IPL", "British Citizenship", "BCCI", "Enforcement Directorate", "Cricket Business"]
 ---
 
 Lalit Modi, the man who built the Indian Premier League and then left the country at the height of its success, is now a British citizen. He made the announcement himself on Saturday, 14 November, first in a talk at the Oxford Union and then in a post on X.

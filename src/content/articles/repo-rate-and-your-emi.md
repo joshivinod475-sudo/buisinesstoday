@@ -2,10 +2,9 @@
 title: "What the Repo Rate Is, and Why It Moves Your Home Loan EMI"
 description: "When the RBI changes the repo rate, millions of loan EMIs follow. Here is how that chain works, in plain English."
 date: 2026-11-10
-category: economy
+category: markets
 image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1200&q=80"
 imageAlt: "Bank building with a financial district skyline in the background"
-featured: true
 ---
 
 Every couple of months, the Reserve Bank of India (RBI) announces whether it is changing the **repo rate**. The announcement makes headlines because it reaches all the way into your monthly budget, through the EMI on your home or car loan.

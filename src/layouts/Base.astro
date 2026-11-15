@@ -1,23 +1,43 @@
 ---
 import '../styles/global.css';
-import { SITE, CATEGORIES } from '../site.config';
+import { SITE, CATEGORIES, DESK } from '../site.config';
+import { getArticles, articleUrl } from '../lib/articles';
+import { abs } from '../lib/images';
+import { organization } from '../lib/schema';
 
 interface Props {
   title?: string;
+  /** Use the title exactly as given, without adding the site name. */
+  rawTitle?: boolean;
   description?: string;
+  /** Path or URL of a 1200x675 share image. */
   image?: string;
+  imageAlt?: string;
   type?: 'website' | 'article';
-  jsonLd?: Record<string, unknown>;
+  article?: { published: string; modified: string; section: string; author: string; authorUrl?: string; tags: string[] };
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
   noindex?: boolean;
+  /** Category slug to highlight in the menu. */
+  section?: string;
 }
-const { title, description = SITE.description, image, type = 'website', jsonLd, noindex = false } = Astro.props;
-const brandName = SITE.name.replace(/^./, (char) => char.toUpperCase());
-const fullTitle = title ? `${title} | ${brandName}` : `${brandName} | ${SITE.tagline}`;
+const {
+  title, rawTitle = false, description = SITE.description, image, imageAlt, type = 'website',
+  article, jsonLd, noindex = false, section,
+} = Astro.props;
+
+const brandName = SITE.name;
+const fullTitle = title ? (rawTitle ? title : `${title} | ${brandName}`) : `${brandName}: ${SITE.tagline}`;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
-const ogImage = image ? new URL(image, Astro.site).href : undefined;
+const ogImage = abs(image ?? '/og-default.jpg');
+const ogAlt = imageAlt ?? `${brandName} logo`;
 const path = Astro.url.pathname;
 const year = new Date().getFullYear();
-const [first, ...rest] = brandName.split(' ');
+// Logo: a trailing "today" is shown in the accent colour.
+const [, logoA = brandName, logoB = ''] = brandName.match(/^(.*?)(today)$/i) ?? [];
+const latest = (await getArticles())[0];
+const schemas = (Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : []);
+// Every page carries the publisher details, so Google can connect stories to the site.
+if (!schemas.some((s) => s['@graph'])) schemas.push({ '@context': 'https://schema.org', ...organization() });
 ---
 <!doctype html>
 <html lang="en">
@@ -33,84 +53,120 @@ const [first, ...rest] = brandName.split(' ');
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'} />
     <meta name="google-site-verification" content="rAW3rqU6x_EAVloKFvAhc8CqZxrWDnViL-polkfqPDQ" />
     <meta name="google-site-verification" content="RBZkIAS2ZtUwa6sW-SHUZjdQuY0AyGdAh8t8m0-nGEg" />
-    <link rel="canonical" href={canonical} />
-    {noindex && <meta name="robots" content="noindex" />}
+    <meta name="theme-color" content="#0b2545" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="alternate" type="application/rss+xml" title={brandName} href="/rss.xml" />
-    <meta name="theme-color" content="#0b2545" />
 
     <meta property="og:site_name" content={brandName} />
+    <meta property="og:locale" content="en_IN" />
     <meta property="og:type" content={type} />
     <meta property="og:title" content={title ?? brandName} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    {ogImage && <meta property="og:image" content={ogImage} />}
-    <meta name="twitter:card" content={ogImage ? 'summary_large_image' : 'summary'} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="675" />
+    <meta property="og:image:alt" content={ogAlt} />
+    {article && (
+      <>
+        <meta property="article:published_time" content={article.published} />
+        <meta property="article:modified_time" content={article.modified} />
+        <meta property="article:section" content={article.section} />
+        {article.authorUrl && <meta property="article:author" content={abs(article.authorUrl)} />}
+        <meta name="author" content={article.author} />
+        {article.tags.map((t) => <meta property="article:tag" content={t} />)}
+      </>
+    )}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title ?? brandName} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content={ogAlt} />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://images.unsplash.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap"
       rel="stylesheet"
     />
-    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+    {schemas.map((s) => <script type="application/ld+json" set:html={JSON.stringify(s)} />)}
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
-    <div class="topbar">
-      <div class="wrap">
-        <span id="today">&nbsp;</span>
-        <a href="/about/">About</a>
+    <header class="site-header">
+      <div class="topbar">
+        <div class="wrap">
+          <span class="today" id="today">&nbsp;</span>
+          {latest && (
+            <a class="ticker" href={articleUrl(latest)}>
+              <span class="ticker-badge">Latest</span>
+              <span class="ticker-text">{latest.data.title}</span>
+            </a>
+          )}
+        </div>
       </div>
-    </div>
-    <header class="masthead">
-      <a class="logo" href="/" aria-label={`${brandName} home`}>
-        <svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="currentColor"/><rect x="14" y="36" width="8" height="14" rx="2" fill="#fbbf24"/><rect x="28" y="26" width="8" height="24" rx="2" fill="#fff"/><rect x="42" y="14" width="8" height="36" rx="2" fill="#fff"/></svg>
-        <span class="logo-text">{first}<em>{rest.length ? ' ' + rest.join(' ') : ''}</em></span>
-      </a>
-      <p class="tagline">{SITE.tagline}</p>
+      <div class="masthead">
+        <a class="logo" href="/" aria-label={`${brandName} home`}>
+          <svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="currentColor"/><rect x="14" y="36" width="8" height="14" rx="2" fill="#fbbf24"/><rect x="28" y="26" width="8" height="24" rx="2" fill="#fff"/><rect x="42" y="14" width="8" height="36" rx="2" fill="#fff"/></svg>
+          <span class="logo-text">{logoA}<em>{logoB}</em></span>
+        </a>
+        <p class="strapline">{SITE.strapline}</p>
+      </div>
+      <nav class="nav" aria-label="Primary">
+        <ul>
+          <li><a href="/" aria-current={path === '/' ? 'page' : undefined}>Home</a></li>
+          {CATEGORIES.map((c) => (
+            <li><a href={`/category/${c.slug}/`} aria-current={section === c.slug ? 'page' : undefined}>{c.name}</a></li>
+          ))}
+          <li><a href="/contact/" aria-current={path.startsWith('/contact') ? 'page' : undefined}>Contact Us</a></li>
+        </ul>
+      </nav>
     </header>
-    <nav class="nav" aria-label="Sections">
-      <ul>
-        <li><a href="/" aria-current={path === '/' ? 'page' : undefined}>Latest</a></li>
-        {CATEGORIES.map((c) => (
-          <li><a href={`/category/${c.slug}/`} aria-current={path.startsWith(`/category/${c.slug}`) ? 'page' : undefined}>{c.name}</a></li>
-        ))}
-      </ul>
-    </nav>
 
     <main id="main">
       <div class="wrap"><slot /></div>
     </main>
 
-    <footer>
+    <footer class="site-footer">
       <div class="wrap">
         <div class="foot-grid">
           <div class="foot-about">
-            <div class="foot-brand">{first}<em>{rest.length ? ' ' + rest.join(' ') : ''}</em></div>
+            <p class="foot-brand">{logoA}<em>{logoB}</em></p>
             <p>{SITE.description}</p>
-            <p><a href={`mailto:${SITE.email}`}>{SITE.email}</a></p>
+            <p>Email: <a href={`mailto:${SITE.email}`}>{SITE.email}</a></p>
           </div>
-          <div>
-            <h4>Sections</h4>
+          <nav aria-label="Sections">
+            <p class="foot-head">Sections</p>
             <ul>{CATEGORIES.map((c) => <li><a href={`/category/${c.slug}/`}>{c.name}</a></li>)}</ul>
-          </div>
-          <div>
-            <h4>Company</h4>
+          </nav>
+          <nav aria-label="Company">
+            <p class="foot-head">Company</p>
             <ul>
-              <li><a href="/about/">About us</a></li>
-              <li><a href="/contact/">Contact</a></li>
-              <li><a href="/privacy-policy/">Privacy policy</a></li>
-              <li><a href="/terms/">Terms of use</a></li>
+              <li><a href="/">Home</a></li>
+              <li><a href="/category/all/">All News</a></li>
+              <li><a href={`/author/${DESK.slug}/`}>{DESK.name}</a></li>
+              <li><a href="/about/">About Us</a></li>
+              <li><a href="/editorial-standards/">Editorial Standards</a></li>
+              <li><a href="/contact/">Contact Us</a></li>
+              <li><a href="/privacy-policy/">Privacy Policy</a></li>
+              <li><a href="/terms/">Terms of Use</a></li>
               <li><a href="/disclaimer/">Disclaimer</a></li>
-              <li><a href="/rss.xml">RSS feed</a></li>
+              <li><a href="/rss.xml">RSS Feed</a></li>
             </ul>
-          </div>
+          </nav>
         </div>
-        <div class="copy">© {year} {brandName}. All rights reserved.</div>
+        <div class="copy">
+          <p>© {year} {brandName}. All rights reserved.</p>
+          <p><a href="/about/">About</a> · <a href="/privacy-policy/">Privacy</a> · <a href="/terms/">Terms</a> · <a href="/editorial-standards/#corrections">Corrections</a></p>
+        </div>
       </div>
     </footer>
     <script is:inline>

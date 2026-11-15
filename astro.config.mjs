@@ -1,9 +1,8 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-import sitemap from '@astrojs/sitemap';
 
+// Sitemaps are built by src/pages/sitemap.xml.ts, news-sitemap.xml.ts and sitemap-index.xml.ts.
 export default defineConfig({
   site: 'https://buisinesstoday.com',
-  integrations: [sitemap()],
   build: { format: 'directory' },
 });

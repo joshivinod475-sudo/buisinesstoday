@@ -1,18 +1,39 @@
 ---
 import Base from '../../layouts/Base.astro';
 import ArticleCard from '../../components/ArticleCard.astro';
-import { CATEGORIES } from '../../site.config';
-import { getArticles } from '../../lib/articles';
+import { SITE, CATEGORIES } from '../../site.config';
+import { getArticles, articleUrl } from '../../lib/articles';
+import { img, abs } from '../../lib/images';
+import { collectionPage, breadcrumbs } from '../../lib/schema';
 
 export function getStaticPaths() {
-  return CATEGORIES.map((c) => ({ params: { cat: c.slug }, props: { cat: c } }));
+  const all = { slug: 'all', name: 'All News', color: '#0b2545', blurb: `Every story from ${SITE.name}, newest first.` };
+  return [all, ...CATEGORIES].map((c) => ({ params: { cat: c.slug }, props: { cat: c } }));
 }
 
 const { cat } = Astro.props;
-const items = (await getArticles()).filter((a) => a.data.category === cat.slug);
+const articles = await getArticles();
+const items = cat.slug === 'all' ? articles : articles.filter((a) => a.data.category === cat.slug);
+const url = `${SITE.url}/category/${cat.slug}/`;
+const title = cat.slug === 'all' ? 'All Business News' : `${cat.name} News`;
+const description = `${cat.blurb} The latest ${cat.name} stories from ${SITE.name}.`;
+const jsonLd = [
+  collectionPage({ url, name: title, description, items: items.slice(0, 20).map((a) => ({ url: abs(articleUrl(a)), name: a.data.title })) }),
+  breadcrumbs([{ name: 'Home', url: `${SITE.url}/` }, { name: cat.name, url }]),
+];
 ---
-<Base title={cat.name} description={`The latest ${cat.name.toLowerCase()} news and explainers.`}>
-  <div class="section-head" style="margin-top:0"><h1 style="font:700 30px/1.2 var(--serif);margin:0">{cat.name}</h1></div>
+<Base title={title} description={description} section={cat.slug} jsonLd={jsonLd}
+  image={items[0] ? img(items[0].data.image, 1200, 675) : undefined} imageAlt={items[0]?.data.imageAlt}
+  noindex={items.length === 0}>
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <span>{cat.name}</span></nav>
+  <header class="cat-head" style={`--cat:${cat.color}`}>
+    <h1>{cat.name}</h1>
+    <p>{cat.blurb}</p>
+  </header>
+  <nav class="pills" aria-label="Browse news by section">
+    <a class:list={['pill', { active: cat.slug === 'all' }]} href="/category/all/">All News</a>
+    {CATEGORIES.map((c) => <a class:list={['pill', { active: cat.slug === c.slug }]} href={`/category/${c.slug}/`}>{c.name}</a>)}
+  </nav>
   {items.length
     ? <div class="grid">{items.map((a) => <ArticleCard article={a} />)}</div>
     : <p class="empty">No {cat.name} stories yet. Check back soon.</p>}

@@ -7,14 +7,20 @@ const slugs = CATEGORIES.map((c) => c.slug) as [string, ...string[]];
 const articles = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/articles' }),
   schema: z.object({
-    title: z.string().max(120),
+    // Google News shows up to 110 characters of a headline.
+    title: z.string().max(110),
     description: z.string().max(220),
+    // A date (2026-11-15) or a date and time (2026-11-15T12:30:00+05:30).
     date: z.coerce.date(),
     updated: z.coerce.date().optional(),
     category: z.enum(slugs),
     author: z.string().default('Editorial Desk'),
-    image: z.string().optional(),
-    imageAlt: z.string().optional(),
+    // Required: Google Discover and Google News need a large image on every story.
+    // Use an Unsplash photo URL, or a file in public/images/ that is at least 1600px wide.
+    image: z.string(),
+    imageAlt: z.string().min(10),
+    imageCredit: z.string().optional(),
+    tags: z.array(z.string()).default([]),
     featured: z.boolean().default(false),
     draft: z.boolean().default(false),
   }),
