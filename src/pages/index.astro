@@ -4,6 +4,9 @@ import ArticleCard from '../components/ArticleCard.astro';
 import { SITE, CATEGORIES, getCategory } from '../site.config';
 import { getArticles, formatDate, readingTime } from '../lib/articles';
 
+const homeTitle = 'Business News, Markets & Money Explained';
+const homeDescription = 'Get clear, expert coverage of business news, markets, the economy, startups, technology and personal finance from Buisinesstoday.';
+
 const articles = await getArticles();
 const lead = articles.find((a) => a.data.featured) ?? articles[0];
 const others = articles.filter((a) => a !== lead);
@@ -22,7 +25,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: SITE.name, url: SITE.url, logo: `${SITE.url}/favicon.svg` },
 };
 ---
-<Base jsonLd={jsonLd}>
+<Base title={homeTitle} description={homeDescription} jsonLd={jsonLd}>
   <h1 class="sr-only">{SITE.name}: {SITE.tagline}</h1>
   {!lead && <p class="empty">No articles yet. Add one in <code>src/content/articles/</code>.</p>}
   {lead && (

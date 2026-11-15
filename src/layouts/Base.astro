@@ -11,31 +11,33 @@ interface Props {
   noindex?: boolean;
 }
 const { title, description = SITE.description, image, type = 'website', jsonLd, noindex = false } = Astro.props;
-const fullTitle = title ? `${title} | ${SITE.name}` : `${SITE.name} | ${SITE.tagline}`;
+const brandName = SITE.name.replace(/^./, (char) => char.toUpperCase());
+const fullTitle = title ? `${title} | ${brandName}` : `${brandName} | ${SITE.tagline}`;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const ogImage = image ? new URL(image, Astro.site).href : undefined;
 const path = Astro.url.pathname;
 const year = new Date().getFullYear();
-const [first, ...rest] = SITE.name.split(' ');
+const [first, ...rest] = brandName.split(' ');
 ---
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="google-site-verification" content="rAW3rqU6x_EAVloKFvAhc8CqZxrWDnViL-polkfqPDQ" />
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
+    <meta name="google-site-verification" content="rAW3rqU6x_EAVloKFvAhc8CqZxrWDnViL-polkfqPDQ" />
+    <meta name="google-site-verification" content="RBZkIAS2ZtUwa6sW-SHUZjdQuY0AyGdAh8t8m0-nGEg" />
     <link rel="canonical" href={canonical} />
     {noindex && <meta name="robots" content="noindex" />}
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <link rel="alternate" type="application/rss+xml" title={SITE.name} href="/rss.xml" />
+    <link rel="alternate" type="application/rss+xml" title={brandName} href="/rss.xml" />
     <meta name="theme-color" content="#0b2545" />
 
-    <meta property="og:site_name" content={SITE.name} />
+    <meta property="og:site_name" content={brandName} />
     <meta property="og:type" content={type} />
-    <meta property="og:title" content={title ?? SITE.name} />
+    <meta property="og:title" content={title ?? brandName} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     {ogImage && <meta property="og:image" content={ogImage} />}
@@ -58,7 +60,7 @@ const [first, ...rest] = SITE.name.split(' ');
       </div>
     </div>
     <header class="masthead">
-      <a class="logo" href="/" aria-label={`${SITE.name} home`}>
+      <a class="logo" href="/" aria-label={`${brandName} home`}>
         <svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="currentColor"/><rect x="14" y="36" width="8" height="14" rx="2" fill="#fbbf24"/><rect x="28" y="26" width="8" height="24" rx="2" fill="#fff"/><rect x="42" y="14" width="8" height="36" rx="2" fill="#fff"/></svg>
         <span class="logo-text">{first}<em>{rest.length ? ' ' + rest.join(' ') : ''}</em></span>
       </a>
@@ -101,7 +103,7 @@ const [first, ...rest] = SITE.name.split(' ');
             </ul>
           </div>
         </div>
-        <div class="copy">© {year} {SITE.name}. All rights reserved.</div>
+        <div class="copy">© {year} {brandName}. All rights reserved.</div>
       </div>
     </footer>
     <script is:inline>
