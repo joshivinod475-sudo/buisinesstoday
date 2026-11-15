@@ -1,8 +1,9 @@
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
-import { CATEGORIES } from './site.config';
+import { CATEGORY_SLUGS } from './lib/categories';
 
-const slugs = CATEGORIES.map((c) => c.slug) as [string, ...string[]];
+// Any category or subcategory slug from src/data/categories.json.
+const slugs = CATEGORY_SLUGS as [string, ...string[]];
 
 const articles = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/articles' }),

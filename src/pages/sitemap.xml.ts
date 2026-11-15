@@ -1,8 +1,9 @@
 // Main sitemap: every page on the site, with the date it last changed.
 // New articles and pages are added automatically on every build.
 import type { APIRoute } from 'astro';
-import { SITE, CATEGORIES, DESK } from '../site.config';
-import { getArticles, isoDate, lastModified, articleUrl } from '../lib/articles';
+import { SITE, DESK } from '../site.config';
+import { CATEGORIES, categoryUrl } from '../lib/categories';
+import { getArticles, isoDate, lastModified, articleUrl, inCategory } from '../lib/articles';
 import { abs, img } from '../lib/images';
 
 const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -30,9 +31,10 @@ export const GET: APIRoute = async () => {
     });
   }
   urls.push({ loc: '/category/all/', lastmod: newest(articles) });
+  // Every category and subcategory from src/data/categories.json that has stories. Empty ones are left out.
   for (const c of CATEGORIES) {
-    const items = articles.filter((a) => a.data.category === c.slug);
-    if (items.length) urls.push({ loc: `/category/${c.slug}/`, lastmod: newest(items) }); // empty sections are left out
+    const items = inCategory(articles, c);
+    if (items.length) urls.push({ loc: categoryUrl(c), lastmod: newest(items) });
   }
   const desk = articles.filter((a) => a.data.author === DESK.name);
   if (desk.length) urls.push({ loc: `/author/${DESK.slug}/`, lastmod: newest(desk) });

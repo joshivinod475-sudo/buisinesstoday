@@ -2,7 +2,7 @@
 title: "Coinbase Wins US National Trust Charter as Hot Inflation Hits Fintech Lenders: The Week Explained"
 description: "Coinbase got final US approval for a national trust bank while a 0.4% rise in October prices raised the odds of a Fed rate hike. Here is what moved fintech stocks this week."
 date: 2026-11-15T14:12:00+05:30
-category: markets
+category: crypto
 image: /images/bitcoin-coin-on-laptop-keyboard.jpg
 imageAlt: "A gold-coloured Bitcoin token resting on the silver keys of a laptop keyboard"
 imageCredit: "A Bitcoin token on a laptop keyboard. Photo: Satheesh Sankaran / Wikimedia Commons (CC BY 2.0)"

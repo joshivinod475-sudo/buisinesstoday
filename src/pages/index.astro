@@ -2,8 +2,9 @@
 import Base from '../layouts/Base.astro';
 import ArticleCard from '../components/ArticleCard.astro';
 import SideStory from '../components/SideStory.astro';
-import { SITE, CATEGORIES, getCategory } from '../site.config';
-import { getArticles, formatDate, isoDate, readingTime, articleUrl, lastModified } from '../lib/articles';
+import { SITE } from '../site.config';
+import { getCategory, colorOf, categoryUrl } from '../lib/categories';
+import { getArticles, getSections, inCategory, formatDate, isoDate, readingTime, articleUrl, lastModified } from '../lib/articles';
 import { img, srcset, abs } from '../lib/images';
 import { collectionPage } from '../lib/schema';
 
@@ -17,10 +18,8 @@ const others = articles.filter((a) => a !== lead);
 const picks = others.slice(0, 3);
 const focus = others.slice(3, 7);
 const latest = others.slice(0, 6);
-const sections = CATEGORIES.map((c) => ({
-  ...c,
-  items: articles.filter((a) => a.data.category === c.slug).slice(0, 3),
-})).filter((s) => s.items.length > 0);
+const populated = await getSections();
+const sections = populated.map(({ cat }) => ({ cat, items: inCategory(articles, cat).slice(0, 3) }));
 const updated = articles.length ? new Date(Math.max(...articles.map((a) => lastModified(a).getTime()))) : new Date();
 const leadCat = lead && getCategory(lead.data.category);
 
@@ -39,13 +38,13 @@ const jsonLd = collectionPage({
 
   <nav class="pills" aria-label="Browse news by section">
     <a class="pill active" href="/category/all/">All News</a>
-    {CATEGORIES.map((c) => <a class="pill" href={`/category/${c.slug}/`}>{c.name}</a>)}
+    {populated.map(({ cat }) => <a class="pill" href={categoryUrl(cat)}>{cat.name}</a>)}
   </nav>
 
   {!lead && <p class="empty">No articles yet. Add one in <code>src/content/articles/</code>.</p>}
   {lead && leadCat && (
     <section class="hero-grid" aria-label="Top stories">
-      <article class="lead" style={`--cat:${leadCat.color}`}>
+      <article class="lead" style={`--cat:${colorOf(leadCat)}`}>
         <a href={articleUrl(lead)} class="lead-art" tabindex="-1" aria-hidden="true">
           <span class="badge">{leadCat.name}</span>
           <img src={img(lead.data.image, 1600, 900)} srcset={srcset(lead.data.image)} sizes="(max-width: 900px) calc(100vw - 32px), 760px" width="1600" height="900" alt={lead.data.imageAlt} loading="eager" fetchpriority="high" />
@@ -66,7 +65,7 @@ const jsonLd = collectionPage({
       <div class="subhead"><h2>In Focus</h2></div>
       <div class="focus-grid">
         {focus.map((a, i) => (
-          <div class="focus-item" style={`--cat:${getCategory(a.data.category).color}`}>
+          <div class="focus-item" style={`--cat:${colorOf(getCategory(a.data.category))}`}>
             <span class="focus-num" aria-hidden="true">{i + 1}</span>
             <div>
               <span class="kicker">{getCategory(a.data.category).name}</span>
@@ -87,10 +86,10 @@ const jsonLd = collectionPage({
   )}
 
   {sections.map((s) => (
-    <section aria-label={s.name}>
-      <div class="section-head" style={`--cat:${s.color}`}>
-        <h2>{s.name}</h2>
-        <a href={`/category/${s.slug}/`}>More {s.name} →</a>
+    <section aria-label={s.cat.name}>
+      <div class="section-head" style={`--cat:${colorOf(s.cat)}`}>
+        <h2>{s.cat.name}</h2>
+        <a href={categoryUrl(s.cat)}>More {s.cat.name} →</a>
       </div>
       <div class="grid">{s.items.map((a) => <ArticleCard article={a} excerpt={false} />)}</div>
     </section>

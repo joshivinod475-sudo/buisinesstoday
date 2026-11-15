@@ -18,10 +18,14 @@ RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
 RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
 
 # Old section addresses -> new sections (permanent redirects)
-RewriteRule ^category/economy/?$ /category/markets/ [L,R=301]
-RewriteRule ^category/personal-finance/?$ /category/markets/ [L,R=301]
+RewriteRule ^category/personal-finance/?$ /category/markets/personal-finance/ [L,R=301]
 RewriteRule ^category/startups/?$ /category/smes/ [L,R=301]
 RewriteRule ^sitemap-0\.xml$ /sitemap.xml [L,R=301]
+
+# "Health & Wellness" was renamed "Healthcare" (slug health -> healthcare).
+# Covers the category page, its paginated pages (/page/2/ ...) and every story under /health/.
+RewriteRule ^category/health(/page/[0-9]+)?/?$ /category/healthcare$1/ [L,R=301]
+RewriteRule ^health/(.+)$ /healthcare/$1 [L,R=301]
 
 # Old article addresses (/articles/name/) -> /category/name/.
 # The list is filled in by scripts/make-redirects.mjs every time the site is built.

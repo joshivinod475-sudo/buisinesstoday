@@ -1,5 +1,5 @@
 ---
-import { getCategory } from '../site.config';
+import { getCategory, colorOf } from '../lib/categories';
 import { formatDate, isoDate, articleUrl, type Article } from '../lib/articles';
 import { img } from '../lib/images';
 
@@ -9,7 +9,7 @@ const { title, date, category, image, imageAlt } = article.data;
 const cat = getCategory(category);
 const url = articleUrl(article);
 ---
-<article class="side-story" style={`--cat:${cat.color}`}>
+<article class="side-story" style={`--cat:${colorOf(cat)}`}>
   <a href={url} class="side-thumb" tabindex="-1" aria-hidden="true">
     <img src={img(image, 400, 400)} width="400" height="400" alt={imageAlt} loading="lazy" decoding="async" />
   </a>

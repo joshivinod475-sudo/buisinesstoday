@@ -1,0 +1,183 @@
+[
+  {
+    "name": "World Business",
+    "slug": "world",
+    "order": 1,
+    "color": "#1d4ed8",
+    "seoTitle": "World Business News & Global Trade | Buisinesstoday",
+    "metaDescription": "Latest world business news on global companies, trade, energy and the automobile industry, with clear analysis of what it means for markets and you.",
+    "intro": "Stay updated on the companies, deals and trade moves shaping the global economy. From multinational earnings to energy markets and the automobile industry, we explain what is happening and why it matters."
+  },
+  {
+    "name": "Energy",
+    "slug": "energy",
+    "parent": "world",
+    "order": 1,
+    "seoTitle": "Energy News: Oil, Gas & Renewables | Buisinesstoday",
+    "metaDescription": "Energy business news on oil, gas, power and renewables, and how prices and policy affect companies, markets and household bills.",
+    "intro": "Oil, gas, power and renewables sit behind the cost of almost everything. We follow energy prices, producers and policy, and explain what they mean for businesses and consumers."
+  },
+  {
+    "name": "Automobile",
+    "slug": "automobile",
+    "parent": "world",
+    "order": 2,
+    "seoTitle": "Automobile News: Carmakers & EVs | Buisinesstoday",
+    "metaDescription": "Automobile industry news on carmakers, electric vehicles, sales figures and supply chains, with analysis of what is driving the sector.",
+    "intro": "The automobile industry is being reshaped by electric vehicles, software and new competitors. We cover carmakers, sales numbers and supply chains, and what the changes mean for buyers and investors."
+  },
+  {
+    "name": "Economy",
+    "slug": "economy",
+    "order": 2,
+    "color": "#0e7490",
+    "seoTitle": "Economy News: GDP, Inflation & Policy | Buisinesstoday",
+    "metaDescription": "Economy news and analysis on GDP, inflation, interest rates, central banks, budgets and trade policy from India, the US and around the world.",
+    "intro": "Understand the big numbers behind the headlines. We cover GDP, inflation, interest rates, central bank decisions, government budgets and trade policy, and explain how they affect businesses and everyday people."
+  },
+  {
+    "name": "Markets & Finance",
+    "slug": "markets",
+    "order": 3,
+    "color": "#0f766e",
+    "seoTitle": "Markets & Finance News: Stocks, Crypto | Buisinesstoday",
+    "metaDescription": "Stock market news, crypto updates, banking, insurance and personal finance explained simply, to help you understand money and make better decisions.",
+    "intro": "Track the stock market, crypto, banking and insurance with news that is easy to follow. Our finance coverage also brings practical personal finance guides to help you manage, save and grow your money."
+  },
+  {
+    "name": "Crypto",
+    "slug": "crypto",
+    "parent": "markets",
+    "order": 1,
+    "seoTitle": "Crypto News: Bitcoin & Regulation | Buisinesstoday",
+    "metaDescription": "Crypto news on Bitcoin, exchanges, stablecoins and regulation, explained clearly with the risks spelled out for everyday investors.",
+    "intro": "Bitcoin, stablecoins and the companies built around them are moving closer to mainstream finance. We report on prices, exchanges and regulation, and are clear about the risks involved."
+  },
+  {
+    "name": "Banking",
+    "slug": "banking",
+    "parent": "markets",
+    "order": 2,
+    "seoTitle": "Banking News: Banks, Loans & Rates | Buisinesstoday",
+    "metaDescription": "Banking news on lenders, loan and deposit rates, central bank rules and digital banking, and what the changes mean for customers.",
+    "intro": "Banks decide what it costs to borrow and what you earn on savings. We cover lenders, interest rates, regulation and digital banking, and explain what each change means for customers."
+  },
+  {
+    "name": "Insurance",
+    "slug": "insurance",
+    "parent": "markets",
+    "order": 3,
+    "seoTitle": "Insurance News: Life, Health & Motor | Buisinesstoday",
+    "metaDescription": "Insurance news on life, health and motor cover, premiums, claims and regulation, to help you understand the policies you pay for.",
+    "intro": "Insurance is easy to buy and hard to understand. We cover life, health and motor insurers, premiums, claims and new rules, so you know what your policy really covers."
+  },
+  {
+    "name": "Personal Finance",
+    "slug": "personal-finance",
+    "parent": "markets",
+    "order": 4,
+    "seoTitle": "Personal Finance: Save, Invest, Borrow | Buisinesstoday",
+    "metaDescription": "Personal finance guides on saving, investing, loans, tax and retirement, written in plain language to help you make better money decisions.",
+    "intro": "Practical guides for the money decisions most people face: saving, investing, borrowing, tax and retirement. Each one is written in plain language and sticks to what you can actually use."
+  },
+  {
+    "name": "Tech & AI",
+    "slug": "tech",
+    "order": 4,
+    "color": "#7c3aed",
+    "seoTitle": "Tech & AI News: AI, Gadgets & Cybersecurity | Buisinesstoday",
+    "metaDescription": "The latest in artificial intelligence, big tech, gadgets, software and cybersecurity, and how technology is changing business.",
+    "intro": "Artificial intelligence and technology are changing every industry. Follow the latest AI breakthroughs, big tech moves, new gadgets, software trends and cybersecurity threats, all explained from a business point of view."
+  },
+  {
+    "name": "Gadgets",
+    "slug": "gadgets",
+    "parent": "tech",
+    "order": 1,
+    "seoTitle": "Gadgets News: Phones, Laptops & More | Buisinesstoday",
+    "metaDescription": "Gadget news on smartphones, laptops, wearables and consumer electronics, covering launches, prices and the companies behind them.",
+    "intro": "New phones, laptops and wearables arrive every week, and not all of them matter. We cover the launches, prices and companies worth knowing about, and the business behind the devices."
+  },
+  {
+    "name": "Cybersecurity",
+    "slug": "cybersecurity",
+    "parent": "tech",
+    "order": 2,
+    "seoTitle": "Cybersecurity News: Breaches & Threats | Buisinesstoday",
+    "metaDescription": "Cybersecurity news on data breaches, ransomware, online fraud and security rules, and how businesses and users can protect themselves.",
+    "intro": "Data breaches, ransomware and online fraud are now everyday business risks. We report on the major incidents and new security rules, and explain how companies and users can protect themselves."
+  },
+  {
+    "name": "Software & SaaS",
+    "slug": "software-saas",
+    "parent": "tech",
+    "order": 3,
+    "seoTitle": "Software & SaaS News for Business | Buisinesstoday",
+    "metaDescription": "Software and SaaS news on enterprise tools, cloud platforms, pricing and product launches, and how they change the way companies work.",
+    "intro": "Software runs modern companies, and most of it is now sold as a subscription. We follow the enterprise tools, cloud platforms and pricing changes that affect how businesses work."
+  },
+  {
+    "name": "SMEs & Startups",
+    "slug": "smes",
+    "order": 5,
+    "color": "#b45309",
+    "seoTitle": "Startup & SME News: Funding & Founders | Buisinesstoday",
+    "metaDescription": "Startup funding rounds, founder stories, ecommerce and small business news, with practical insights for entrepreneurs and SME owners.",
+    "intro": "News and insights for the people building businesses. We cover startup funding rounds, founder journeys, ecommerce growth and the challenges and opportunities facing small and medium enterprises."
+  },
+  {
+    "name": "Funding",
+    "slug": "funding",
+    "parent": "smes",
+    "order": 1,
+    "seoTitle": "Startup Funding News: Rounds & Deals | Buisinesstoday",
+    "metaDescription": "Startup funding news on seed rounds, venture capital, valuations and IPOs, plus clear guides to how young companies raise money.",
+    "intro": "Who is raising money, from whom and at what valuation. We cover seed rounds, venture capital and IPOs, and explain how startup funding actually works."
+  },
+  {
+    "name": "Ecommerce",
+    "slug": "ecommerce",
+    "parent": "smes",
+    "order": 2,
+    "seoTitle": "Ecommerce News: Online Retail & D2C | Buisinesstoday",
+    "metaDescription": "Ecommerce news on online marketplaces, direct-to-consumer brands, quick commerce and logistics, with insights for sellers and founders.",
+    "intro": "Online retail keeps changing how people shop and how businesses sell. We cover marketplaces, direct-to-consumer brands, quick commerce and logistics, with useful takeaways for sellers."
+  },
+  {
+    "name": "Marketing",
+    "slug": "marketing",
+    "order": 6,
+    "color": "#c2410c",
+    "seoTitle": "Marketing News: Digital Marketing & SEO | Buisinesstoday",
+    "metaDescription": "Digital marketing, SEO, social media, advertising and brand strategy news and guides for marketers, founders and growing businesses.",
+    "intro": "Stay ahead in digital marketing with the latest on SEO, social media, paid advertising, content and brand strategy. Practical guides and industry updates for marketers, founders and growing businesses."
+  },
+  {
+    "name": "Real Estate",
+    "slug": "property",
+    "order": 7,
+    "color": "#0369a1",
+    "seoTitle": "Real Estate News: Property & Housing | Buisinesstoday",
+    "metaDescription": "Real estate news on housing markets, commercial property, home loans and REITs, with trends and analysis for buyers, investors and developers.",
+    "intro": "Follow housing prices, commercial property, home loan rates and real estate investment trends. Our coverage helps buyers, investors and developers understand where the property market is heading."
+  },
+  {
+    "name": "Healthcare",
+    "slug": "healthcare",
+    "order": 8,
+    "color": "#be123c",
+    "seoTitle": "Healthcare Business News: Pharma & MedTech | Buisinesstoday",
+    "metaDescription": "Healthcare business news covering pharma, hospitals, medtech, health insurance and digital health, and the companies shaping the industry.",
+    "intro": "The business of healthcare, covered clearly. We report on pharma companies, hospitals, medical technology, health insurance and digital health, and the deals and policies shaping the industry."
+  },
+  {
+    "name": "Press Releases",
+    "slug": "press-releases",
+    "order": 9,
+    "color": "#475569",
+    "menu": false,
+    "seoTitle": "Press Releases | Buisinesstoday",
+    "metaDescription": "Official company announcements and press releases from businesses worldwide.",
+    "intro": "Official announcements and press releases shared by companies and organisations. Content in this section is provided by the issuing company."
+  }
+]

@@ -1,5 +1,6 @@
 // Structured data (schema.org) shared across pages.
-import { SITE, CATEGORIES, DESK } from '../site.config';
+import { SITE, DESK } from '../site.config';
+import { MAIN_CATEGORIES } from './categories';
 
 const ORG_ID = `${SITE.url}/#organization`;
 const SITE_ID = `${SITE.url}/#website`;
@@ -18,7 +19,7 @@ export function organization() {
       '@type': 'ContactPoint', contactType: 'editorial', email: SITE.email,
       url: `${SITE.url}/contact/`, availableLanguage: 'English',
     }],
-    knowsAbout: CATEGORIES.filter((c) => c.slug !== 'press-releases').map((c) => c.name),
+    knowsAbout: MAIN_CATEGORIES.filter((c) => c.menu !== false).map((c) => c.name),
     publishingPrinciples: `${SITE.url}/editorial-standards/`,
     ethicsPolicy: `${SITE.url}/editorial-standards/`,
     correctionsPolicy: `${SITE.url}/editorial-standards/#corrections`,

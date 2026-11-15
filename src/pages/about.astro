@@ -1,12 +1,16 @@
 ---
 import Page from '../layouts/Page.astro';
-import { SITE, CATEGORIES } from '../site.config';
+import { SITE } from '../site.config';
+import { categoryUrl } from '../lib/categories';
+import { getMenu } from '../lib/articles';
+
+const menu = await getMenu();
 ---
 <Page title="About us" description={`What ${SITE.name} covers, how we work and how to reach us.`}>
   <p><strong>{SITE.name}</strong> is an independent publication covering business, markets and money. Our goal is simple: explain what is happening in the economy and why it matters to you, in plain language.</p>
 
   <h2>What we cover</h2>
-  <ul>{CATEGORIES.map((c) => <li><a href={`/category/${c.slug}/`}>{c.name}</a></li>)}</ul>
+  <ul>{menu.map(({ cat }) => <li><a href={categoryUrl(cat)}>{cat.name}</a></li>)}</ul>
 
   <h2>Our editorial standards</h2>
   <ul>

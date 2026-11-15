@@ -1,5 +1,5 @@
 ---
-import { getCategory } from '../site.config';
+import { getCategory, colorOf } from '../lib/categories';
 import { formatDate, isoDate, readingTime, articleUrl, type Article } from '../lib/articles';
 import { img, srcset } from '../lib/images';
 
@@ -9,7 +9,7 @@ const { title, description, date, category, image, imageAlt } = article.data;
 const cat = getCategory(category);
 const url = articleUrl(article);
 ---
-<article class="card" style={`--cat:${cat.color}`}>
+<article class="card" style={`--cat:${colorOf(cat)}`}>
   <a href={url} class="card-art" tabindex="-1" aria-hidden="true">
     <span class="badge">{cat.name}</span>
     <img src={img(image, 800, 450)} srcset={srcset(image)} sizes="(max-width: 560px) calc(100vw - 32px), (max-width: 900px) 50vw, 380px" width="800" height="450" alt={imageAlt} loading="lazy" decoding="async" />

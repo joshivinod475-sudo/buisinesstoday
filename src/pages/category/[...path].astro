@@ -1,0 +1,96 @@
+---
+// One template for every listing page:
+//   /category/all/                       every story
+//   /category/tech/                      a main category (also lists its subcategories' stories)
+//   /category/tech/cybersecurity/        a subcategory
+//   /category/tech/page/2/               older stories, PAGE_SIZE per page
+// Categories come from src/data/categories.json.
+import Base from '../../layouts/Base.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+import { SITE, PAGE_SIZE } from '../../site.config';
+import { CATEGORIES, ALL_NEWS, topOf, colorOf, categoryUrl, type Category } from '../../lib/categories';
+import { getArticles, getSections, inCategory, articleUrl, type Article } from '../../lib/articles';
+import { img, abs } from '../../lib/images';
+import { collectionPage, breadcrumbs } from '../../lib/schema';
+
+export async function getStaticPaths() {
+  const articles = await getArticles();
+  const listings = [
+    { cat: ALL_NEWS, base: '/category/all/', items: articles },
+    ...CATEGORIES.map((cat) => ({ cat, base: categoryUrl(cat), items: inCategory(articles, cat) })),
+  ];
+  return listings.flatMap(({ cat, base, items }) => {
+    const pages = Math.max(1, Math.ceil(items.length / PAGE_SIZE));
+    return Array.from({ length: pages }, (_, i) => {
+      const page = i + 1;
+      const path = base.replace(/^\/category\/|\/$/g, '') + (page > 1 ? `/page/${page}` : '');
+      return { params: { path }, props: { cat, base, page, pages, total: items.length, items: items.slice(i * PAGE_SIZE, page * PAGE_SIZE) } };
+    });
+  });
+}
+
+interface Props { cat: Category; base: string; page: number; pages: number; total: number; items: Article[] }
+const { cat, base, page, pages, total, items } = Astro.props;
+
+const isAll = cat.slug === 'all';
+const top = isAll ? cat : topOf(cat);
+const pageUrl = (n: number) => (n > 1 ? `${base}page/${n}/` : base);
+const url = SITE.url + pageUrl(page);
+
+// "World Business News & Global Trade | Buisinesstoday" -> "... – Page 2 | Buisinesstoday"
+const title = page > 1 ? cat.seoTitle.replace(/ \| [^|]+$/, (brand) => ` – Page ${page}${brand}`) : cat.seoTitle;
+const description = page > 1 ? `Page ${page} of ${pages}. ${cat.metaDescription}` : cat.metaDescription;
+
+const sections = await getSections();
+// Subcategories (with stories) of the main category being viewed.
+const subs = isAll ? [] : (sections.find((s) => s.cat.slug === top.slug)?.children ?? []);
+
+const trail = [
+  { name: 'Home', url: `${SITE.url}/` },
+  ...(cat.parent ? [{ name: top.name, url: SITE.url + categoryUrl(top) }] : []),
+  { name: cat.name, url: SITE.url + base },
+];
+const jsonLd = [
+  collectionPage({ url, name: title.replace(/ \| [^|]+$/, ''), description, items: items.map((a) => ({ url: abs(articleUrl(a)), name: a.data.title })) }),
+  breadcrumbs(trail),
+];
+---
+<Base title={title} rawTitle description={description} section={top.slug} jsonLd={jsonLd}
+  image={items[0] ? img(items[0].data.image, 1200, 675) : undefined} imageAlt={items[0]?.data.imageAlt}
+  noindex={total === 0}>
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a> ›
+    {cat.parent && <><a href={categoryUrl(top)}>{top.name}</a> › </>}
+    {page > 1 ? <a href={base}>{cat.name}</a> : <span aria-current="page">{cat.name}</span>}
+    {page > 1 && <> › <span aria-current="page">Page {page}</span></>}
+  </nav>
+  <header class="cat-head" style={`--cat:${colorOf(cat)}`}>
+    <h1>{cat.name}</h1>
+    {page === 1 ? <p>{cat.intro}</p> : <p class="cat-page">Page {page} of {pages}</p>}
+  </header>
+  <nav class="pills" aria-label="Browse news by section">
+    <a class:list={['pill', { active: isAll }]} href="/category/all/">All News</a>
+    {sections.map(({ cat: c }) => <a class:list={['pill', { active: !isAll && top.slug === c.slug }]} href={categoryUrl(c)}>{c.name}</a>)}
+  </nav>
+  {subs.length > 0 && (
+    <nav class="subpills" aria-label={`${top.name} topics`}>
+      <span class="subpills-label">{top.name}:</span>
+      <a class:list={['pill', { active: cat.slug === top.slug }]} href={categoryUrl(top)}>All</a>
+      {subs.map((s) => <a class:list={['pill', { active: cat.slug === s.slug }]} href={categoryUrl(s)}>{s.name}</a>)}
+    </nav>
+  )}
+  {items.length
+    ? <div class="grid">{items.map((a) => <ArticleCard article={a} />)}</div>
+    : <p class="empty">No {cat.name} stories yet. Check back soon.</p>}
+  {pages > 1 && (
+    <nav class="pager" aria-label="Pages">
+      {page > 1 ? <a class="pager-step" href={pageUrl(page - 1)} rel="prev">← Newer</a> : <span class="pager-step" aria-disabled="true">← Newer</span>}
+      <ul>
+        {Array.from({ length: pages }, (_, i) => i + 1).map((n) => (
+          <li>{n === page ? <span aria-current="page">{n}</span> : <a href={pageUrl(n)} aria-label={`Page ${n}`}>{n}</a>}</li>
+        ))}
+      </ul>
+      {page < pages ? <a class="pager-step" href={pageUrl(page + 1)} rel="next">Older →</a> : <span class="pager-step" aria-disabled="true">Older →</span>}
+    </nav>
+  )}
+</Base>

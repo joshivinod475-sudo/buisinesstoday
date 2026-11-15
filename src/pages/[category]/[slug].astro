@@ -2,14 +2,15 @@
 import { render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import SideStory from '../../components/SideStory.astro';
-import { SITE, DESK, getCategory } from '../../site.config';
+import { SITE, DESK } from '../../site.config';
+import { getCategory, topOf, colorOf, categoryUrl } from '../../lib/categories';
 import { getArticles, formatDate, isoDate, readingTime, wordCount, lastModified, authorUrl, type Article } from '../../lib/articles';
 import { img, srcset, abs, schemaImages } from '../../lib/images';
 import { organization, author as authorSchema, breadcrumbs, IDS } from '../../lib/schema';
 
 export async function getStaticPaths() {
   const articles = await getArticles();
-  return articles.map((article) => ({ params: { category: article.data.category, slug: article.id }, props: { article, all: articles } }));
+  return articles.map((article) => ({ params: { category: topOf(getCategory(article.data.category)).slug, slug: article.id }, props: { article, all: articles } }));
 }
 
 interface Props { article: Article; all: Article[] }
@@ -18,13 +19,17 @@ const { title, description, date, category, author, image, imageAlt, imageCredit
 const { Content } = await render(article);
 const cat = getCategory(category);
 const url = new URL(Astro.url.pathname, Astro.site).href;
-const catUrl = `${SITE.url}/category/${cat.slug}/`;
+const top = topOf(cat); // the main category; `cat` may be a subcategory of it
+const catUrl = `${SITE.url}${categoryUrl(cat)}`;
+const topUrl = `${SITE.url}${categoryUrl(top)}`;
 const modified = lastModified(article);
 const wasUpdated = modified.getTime() !== date.getTime();
 const byUrl = authorUrl(author);
-const sameCat = all.filter((a) => a.id !== article.id && a.data.category === category);
-const rest = all.filter((a) => a.id !== article.id && a.data.category !== category);
-const related = [...sameCat, ...rest].slice(0, 4);
+const others = all.filter((a) => a.id !== article.id);
+const sameCat = others.filter((a) => a.data.category === category);
+const sameTop = others.filter((a) => a.data.category !== category && topOf(getCategory(a.data.category)).slug === top.slug);
+const rest = others.filter((a) => topOf(getCategory(a.data.category)).slug !== top.slug);
+const related = [...sameCat, ...sameTop, ...rest].slice(0, 4);
 const enc = encodeURIComponent;
 
 const jsonLd = [
@@ -43,24 +48,25 @@ const jsonLd = [
     image: schemaImages(image),
     datePublished: isoDate(date),
     dateModified: isoDate(modified),
-    articleSection: cat.name,
+    articleSection: top.name,
     ...(tags.length ? { keywords: tags.join(', ') } : {}),
     author: [authorSchema(author)],
     publisher: organization(),
   },
   breadcrumbs([
     { name: 'Home', url: `${SITE.url}/` },
-    { name: cat.name, url: catUrl },
+    { name: top.name, url: topUrl },
+    ...(cat.parent ? [{ name: cat.name, url: catUrl }] : []),
     { name: title, url },
   ]),
 ];
 ---
-<Base title={title} rawTitle description={description} image={img(image, 1200, 675)} imageAlt={imageAlt} type="article" section={cat.slug} jsonLd={jsonLd}
-  article={{ published: isoDate(date), modified: isoDate(modified), section: cat.name, author, authorUrl: byUrl, tags }}>
-  <article class="article" style={`--cat:${cat.color}`}>
+<Base title={title} rawTitle description={description} image={img(image, 1200, 675)} imageAlt={imageAlt} type="article" section={top.slug} jsonLd={jsonLd}
+  article={{ published: isoDate(date), modified: isoDate(modified), section: top.name, author, authorUrl: byUrl, tags }}>
+  <article class="article" style={`--cat:${colorOf(cat)}`}>
     <header class="article-head">
-      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <a href={`/category/${cat.slug}/`}>{cat.name}</a></nav>
-      <a class="badge badge-link" href={`/category/${cat.slug}/`}>{cat.name}</a>
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <a href={categoryUrl(top)}>{top.name}</a>{cat.parent && <> › <a href={categoryUrl(cat)}>{cat.name}</a></>}</nav>
+      <a class="badge badge-link" href={categoryUrl(cat)}>{cat.name}</a>
       <h1>{title}</h1>
       <p class="dek">{description}</p>
       <div class="byline">

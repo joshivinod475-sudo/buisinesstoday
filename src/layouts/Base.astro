@@ -1,7 +1,8 @@
 ---
 import '../styles/global.css';
-import { SITE, CATEGORIES, DESK } from '../site.config';
-import { getArticles, articleUrl } from '../lib/articles';
+import { SITE, DESK } from '../site.config';
+import { categoryUrl } from '../lib/categories';
+import { getArticles, getSections, articleUrl } from '../lib/articles';
 import { abs } from '../lib/images';
 import { organization } from '../lib/schema';
 
@@ -36,6 +37,13 @@ const year = new Date().getFullYear();
 const [, logoA = brandName, logoB = ''] = brandName.match(/^(.*?)(today)$/i) ?? [];
 // Headlines for the scrolling "Breaking News" strip: the newest stories.
 const breaking = (await getArticles()).slice(0, 8);
+// Menu and footer sections come from src/data/categories.json. Categories and
+// subcategories with no published stories are left out until they have one.
+const sections = await getSections();
+const menu = sections.filter((s) => s.cat.menu !== false);
+// The subcategory page being viewed, if any (/category/<parent>/<sub>/...).
+const subSlug = path.match(/^\/category\/[^/]+\/(?!page\/)([^/]+)\//)?.[1];
+const isCategoryHome = (slug: string) => path === `/category/${slug}/`;
 const schemas = (Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : []);
 // Every page carries the publisher details, so Google can connect stories to the site.
 if (!schemas.some((s) => s['@graph'])) schemas.push({ '@context': 'https://schema.org', ...organization() });
@@ -43,6 +51,8 @@ if (!schemas.some((s) => s['@graph'])) schemas.push({ '@context': 'https://schem
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Lets the styles know scripts are on, so the mobile menu can start closed. -->
+    <script is:inline>document.documentElement.className += ' js';</script>
     <!-- Google tag (Google Analytics / GA4) -->
     <script is:inline async src="https://www.googletagmanager.com/gtm.js?id=GTM-TJM2GG8R"></script>
     <script is:inline>
@@ -116,13 +126,31 @@ if (!schemas.some((s) => s['@graph'])) schemas.push({ '@context': 'https://schem
         </a>
         <p class="strapline">{SITE.strapline}</p>
       </div>
-      <nav class="nav" aria-label="Primary">
-        <ul>
+      <nav class="nav" id="site-nav" aria-label="Primary">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <span>Menu</span>
+        </button>
+        <ul class="nav-list" id="primary-menu">
           <li><a href="/" aria-current={path === '/' ? 'page' : undefined}>Home</a></li>
-          {CATEGORIES.map((c) => (
-            <li><a href={`/category/${c.slug}/`} aria-current={section === c.slug ? 'page' : undefined}>{c.name}</a></li>
+          {menu.map(({ cat: c, children }) => (
+            <li class:list={{ 'has-sub': children.length > 0 }}>
+              {/* "page" on the category's own page, "true" on its subcategory and story pages: both get the underline. */}
+              <a href={categoryUrl(c)} aria-current={section === c.slug ? (isCategoryHome(c.slug) ? 'page' : 'true') : undefined}>{c.name}</a>
+              {children.length > 0 && (
+                <>
+                  <button class="sub-toggle" type="button" aria-expanded="false" aria-haspopup="true" aria-controls={`sub-${c.slug}`} aria-label={`${c.name} topics`}>
+                    <svg viewBox="0 0 12 12" width="12" height="12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </button>
+                  <ul class="sub" id={`sub-${c.slug}`}>
+                    {children.map((s) => (
+                      <li><a href={categoryUrl(s)} aria-current={section === c.slug && subSlug === s.slug ? 'page' : undefined}>{s.name}</a></li>
+                    ))}
+                  </ul>
+                </>
+              )}
+            </li>
           ))}
-          <li><a href="/contact/" aria-current={path.startsWith('/contact') ? 'page' : undefined}>Contact Us</a></li>
         </ul>
       </nav>
       {breaking.length > 0 && (
@@ -157,7 +185,7 @@ if (!schemas.some((s) => s['@graph'])) schemas.push({ '@context': 'https://schem
           </div>
           <nav aria-label="Sections">
             <p class="foot-head">Sections</p>
-            <ul>{CATEGORIES.map((c) => <li><a href={`/category/${c.slug}/`}>{c.name}</a></li>)}</ul>
+            <ul>{sections.map(({ cat: c }) => <li><a href={categoryUrl(c)}>{c.name}</a></li>)}</ul>
           </nav>
           <nav aria-label="Company">
             <p class="foot-head">Company</p>
@@ -181,6 +209,69 @@ if (!schemas.some((s) => s['@graph'])) schemas.push({ '@context': 'https://schem
         </div>
       </div>
     </footer>
+    <script is:inline>
+      // Main menu: the mobile "Menu" button, and the subcategory dropdowns
+      // (hover on desktop, tap on touch screens, Tab / Enter / Esc on a keyboard).
+      (function () {
+        var nav = document.getElementById('site-nav');
+        if (!nav) return;
+        var toggle = nav.querySelector('.nav-toggle');
+        var items = nav.querySelectorAll('.has-sub');
+        var desktop = window.matchMedia('(min-width: 1101px)');
+
+        function setOpen(li, open) {
+          li.classList.toggle('open', open);
+          li.querySelector('.sub-toggle').setAttribute('aria-expanded', open ? 'true' : 'false');
+        }
+        function closeAll(except) {
+          items.forEach(function (li) { if (li !== except) { setOpen(li, false); li.classList.remove('closed'); } });
+        }
+
+        toggle.addEventListener('click', function () {
+          var open = nav.classList.toggle('open');
+          toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+          if (!open) closeAll();
+        });
+
+        items.forEach(function (li) {
+          var btn = li.querySelector('.sub-toggle');
+          btn.addEventListener('click', function () {
+            var open = btn.getAttribute('aria-expanded') !== 'true';
+            closeAll(li);
+            setOpen(li, open);
+            li.classList.toggle('closed', !open); // keeps it shut while the pointer is still over it
+          });
+          // Desktop: opening on hover or keyboard focus is done in CSS; keep aria-expanded in step.
+          li.addEventListener('mouseenter', function () { if (desktop.matches && !li.classList.contains('closed')) btn.setAttribute('aria-expanded', 'true'); });
+          li.addEventListener('mouseleave', function () { if (desktop.matches) { setOpen(li, false); li.classList.remove('closed'); } });
+          li.addEventListener('focusin', function () { if (desktop.matches && !li.classList.contains('closed')) btn.setAttribute('aria-expanded', 'true'); });
+          li.addEventListener('focusout', function (e) {
+            if (desktop.matches && !li.contains(e.relatedTarget)) { setOpen(li, false); li.classList.remove('closed'); }
+          });
+          li.addEventListener('keydown', function (e) {
+            if (e.key !== 'Escape' || btn.getAttribute('aria-expanded') !== 'true') return;
+            e.stopPropagation();
+            setOpen(li, false);
+            li.classList.add('closed');
+            btn.focus();
+          });
+        });
+
+        // Esc closes the mobile menu; a click or tap outside closes everything.
+        nav.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && nav.classList.contains('open')) {
+            nav.classList.remove('open');
+            toggle.setAttribute('aria-expanded', 'false');
+            toggle.focus();
+          }
+        });
+        document.addEventListener('click', function (e) {
+          if (nav.contains(e.target)) return;
+          closeAll();
+          if (nav.classList.contains('open')) { nav.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); }
+        });
+      })();
+    </script>
     <script is:inline>
       document.getElementById('today').textContent = new Date().toLocaleDateString('en-IN', {
         weekday: 'long', day: 'numeric', month: 'long', year: 'numeric',
