@@ -13,7 +13,7 @@ You never upload files by hand. The site also rebuilds by itself once a day, so 
 ## Publish a new article (the everyday job)
 
 1. Create a new file in `src/content/articles/`, for example `gold-prices-explained.md`.
-   The file name becomes the web address: `buisinesstoday.com/articles/gold-prices-explained/`.
+   The file name becomes the web address: `buisinesstoday.com/markets/gold-prices-explained/` (the category, then the file name).
    Use lowercase letters, numbers and dashes only.
 2. Paste this at the top and fill it in:
 
@@ -80,7 +80,7 @@ npm run dev      # then open http://localhost:4321
 | Colours and fonts | `src/styles/global.css` |
 | Header, footer, SEO tags | `src/layouts/Base.astro` |
 | Home page | `src/pages/index.astro` |
-| Article page | `src/pages/articles/[slug].astro` |
+| Article page | `src/pages/[category]/[slug].astro` |
 | About / Contact / Editorial standards / legal pages | `src/pages/*.astro` |
 | Structured data (schema) | `src/lib/schema.ts` |
 | Image sizes | `src/lib/images.ts` and `scripts/make-images.mjs` |

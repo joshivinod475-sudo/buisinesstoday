@@ -80,9 +80,9 @@ Tighter US rules would speed that up. Rui Ma of Tech Buzz China told the AP the 
 
 India is a buyer in this market, not a bystander. Reliance and the Tata Group both announced AI infrastructure partnerships with Nvidia in 2023, and Indian data centre operators and the government's IndiaAI Mission depend on a steady supply of its processors.
 
-Two things matter from here. First, any new US rule that tracks where chips end up will add compliance work for buyers everywhere, including India. Second, Nvidia is one of the most widely held US stocks among Indian investors who buy overseas shares or international funds. A leadership change at a company this dependent on one person is a reminder of why [spreading money across a whole index](/articles/index-funds-vs-active-funds/) lowers the damage any single stock can do.
+Two things matter from here. First, any new US rule that tracks where chips end up will add compliance work for buyers everywhere, including India. Second, Nvidia is one of the most widely held US stocks among Indian investors who buy overseas shares or international funds. A leadership change at a company this dependent on one person is a reminder of why [spreading money across a whole index](/markets/index-funds-vs-active-funds/) lowers the damage any single stock can do.
 
-Nvidia's next quarterly results will be the first test of how the company communicates without Huang, and a good moment to apply the basics of [reading a results announcement](/articles/read-quarterly-results-in-five-minutes/): look at the guidance and the commentary on China, and not only the headline profit.
+Nvidia's next quarterly results will be the first test of how the company communicates without Huang, and a good moment to apply the basics of [reading a results announcement](/markets/read-quarterly-results-in-five-minutes/): look at the guidance and the commentary on China, and not only the headline profit.
 
 ## What to watch next
 

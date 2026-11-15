@@ -54,7 +54,7 @@ Higher interest rates do not hit all fintech companies the same way.
 
 **Payment networks are more insulated.** Mastercard and Visa earn a small fee on every transaction and carry no lending risk, so their income tends to rise with prices. Both gained for a sixth week. Citi raised its price target on Mastercard to $800 from $675 and on Visa to $490, while Morgan Stanley lifted its Visa target to $471, according to analyst notes reported by Stocktwits. Price targets are opinions about the future and are often wrong.
 
-The same logic applies in India. When the Reserve Bank of India changes its policy rate, [loan EMIs move with the repo rate](/articles/repo-rate-and-your-emi/), and lenders feel the change well before payment companies do.
+The same logic applies in India. When the Reserve Bank of India changes its policy rate, [loan EMIs move with the repo rate](/markets/repo-rate-and-your-emi/), and lenders feel the change well before payment companies do.
 
 ## Other fintech news this week
 
@@ -68,7 +68,7 @@ The same logic applies in India. When the Reserve Bank of India changes its poli
 
 **A US rate hike travels.** Higher American interest rates tend to strengthen the dollar and can pull foreign money out of emerging markets, including India. That can weigh on the rupee and on Indian shares, at least in the short term.
 
-**The payments contrast is worth noting.** Mastercard and Visa are valued for the fees they collect on each swipe. India's own system works differently, as our explainer on [what happens when you pay with UPI](/articles/what-happens-when-you-pay-with-upi/) shows, with no charge to the customer for most payments.
+**The payments contrast is worth noting.** Mastercard and Visa are valued for the fees they collect on each swipe. India's own system works differently, as our explainer on [what happens when you pay with UPI](/tech/what-happens-when-you-pay-with-upi/) shows, with no charge to the customer for most payments.
 
 ## What to watch next
 

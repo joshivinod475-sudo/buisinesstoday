@@ -15,7 +15,7 @@ export async function GET(context) {
       title: a.data.title,
       description: a.data.description,
       pubDate: a.data.date,
-      link: `/articles/${a.id}/`,
+      link: `/${a.data.category}/${a.id}/`,
       author: a.data.author,
       categories: [getCategory(a.data.category).name, ...a.data.tags],
       customData: `<media:content url="${abs(img(a.data.image, 1200, 675)).replace(/&/g, '&amp;')}" medium="image" width="1200" height="675" />`,

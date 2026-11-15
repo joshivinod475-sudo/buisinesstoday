@@ -9,6 +9,7 @@
     "dev": "astro dev",
     "prebuild": "npm run images",
     "build": "astro build",
+    "postbuild": "node scripts/make-redirects.mjs",
     "preview": "astro preview",
     "check": "astro check"
   },

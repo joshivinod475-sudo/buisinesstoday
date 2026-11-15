@@ -70,7 +70,7 @@ SpaceX has been a listed company since June, when it sold shares at $135 each. T
 
 The shares slipped about 2% in after-hours trading on Friday once it became clear the booster had been lost. The ship was caught on Saturday, when markets were closed, so Monday, 16 November, will be the first full session to reflect both outcomes.
 
-Two cautions apply. Launch services are a small part of SpaceX's income: space accounted for $1.8 billion of its $14.6 billion in third-quarter revenue, according to Motley Fool, with most of the rest from Starlink and artificial intelligence. And analysts disagree widely on whether the valuation is justified. A share price built on long-term promises can move sharply on a single test flight, in either direction. Indian investors who hold US shares through overseas accounts or international funds should treat it that way, and it is one more argument for [spreading money across an index](/articles/index-funds-vs-active-funds/) over betting on one company.
+Two cautions apply. Launch services are a small part of SpaceX's income: space accounted for $1.8 billion of its $14.6 billion in third-quarter revenue, according to Motley Fool, with most of the rest from Starlink and artificial intelligence. And analysts disagree widely on whether the valuation is justified. A share price built on long-term promises can move sharply on a single test flight, in either direction. Indian investors who hold US shares through overseas accounts or international funds should treat it that way, and it is one more argument for [spreading money across an index](/markets/index-funds-vs-active-funds/) over betting on one company.
 
 ## Why this matters in India
 
@@ -78,7 +78,7 @@ Two cautions apply. Launch services are a small part of SpaceX's income: space a
 
 **Launch competition.** India's space agency ISRO has built its commercial reputation on low-cost launches. Fully reusable rockets move the goalposts. ISRO is developing its own Next Generation Launch Vehicle with a reusable first stage, approved by the government in 2024, and India's private sector is now in the race too: Hyderabad-based Skyroot reached orbit with its Vikram-1 rocket in July this year, and Chennai's Agnikul is working towards its first orbital launch. These are small rockets built for small satellites, a different market from Starship's. But every launch provider will be measured against a much lower price per kilogram if Starship delivers.
 
-**Startups.** Cheaper access to orbit helps companies that build satellites more than those that build rockets. For Indian space startups [raising money](/articles/how-startups-raise-money/), that shifts where the opportunity lies.
+**Startups.** Cheaper access to orbit helps companies that build satellites more than those that build rockets. For Indian space startups [raising money](/smes/how-startups-raise-money/), that shifts where the opportunity lies.
 
 ## What to watch next
 

@@ -9,7 +9,7 @@ import { organization, author as authorSchema, breadcrumbs, IDS } from '../../li
 
 export async function getStaticPaths() {
   const articles = await getArticles();
-  return articles.map((article) => ({ params: { slug: article.id }, props: { article, all: articles } }));
+  return articles.map((article) => ({ params: { category: article.data.category, slug: article.id }, props: { article, all: articles } }));
 }
 
 interface Props { article: Article; all: Article[] }

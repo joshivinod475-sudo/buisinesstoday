@@ -31,7 +31,7 @@ export function lastModified(a: Article) {
 }
 
 export function articleUrl(a: Article) {
-  return `/articles/${a.id}/`;
+  return `/${a.data.category}/${a.id}/`;
 }
 
 /** Link to the author page, if the byline is the in-house desk. */

@@ -54,7 +54,7 @@ A change of control in Congress matters to companies and investors for three pra
 
 **Budget fights become more likely.** Congress controls government spending. With the two branches in different hands, disputes over funding and the federal debt limit can end in government shutdowns. The 2025 shutdown showed the wider cost: it interrupted official data collection, which is why the US could not publish a full annual inflation figure this week.
 
-**Oversight increases.** The majority party chairs congressional committees and decides what they investigate. Democratic chairs are expected to examine the administration's decisions on tariffs, technology exports and the Iran war. That is already visible in the pressure on chip exports to China following [Jensen Huang's resignation from Nvidia](/articles/nvidia-jensen-huang-resignation-us-china-ai-chip-rivalry/).
+**Oversight increases.** The majority party chairs congressional committees and decides what they investigate. Democratic chairs are expected to examine the administration's decisions on tariffs, technology exports and the Iran war. That is already visible in the pressure on chip exports to China following [Jensen Huang's resignation from Nvidia](/tech/nvidia-jensen-huang-resignation-us-china-ai-chip-rivalry/).
 
 Much stays the same. The president retains wide powers over tariffs, immigration rules and foreign policy, which are the areas that matter most to India. A new Congress does not by itself change US duties on Indian goods or the rules for H-1B work visas.
 
@@ -69,7 +69,7 @@ El-Sayed was not the only first. According to the same report, the elections als
 ## Why Indian readers should care
 
 - **Trade:** tariff policy stays with the White House, but a Democratic Congress can hold hearings, demand documents and attach conditions to spending bills.
-- **Markets:** US political deadlock tends to mean fewer surprises in law but more drama over budgets, and American markets set the tone for foreign investment flows into India. Interest rates still matter more, and the US Federal Reserve, like the RBI with [the repo rate](/articles/repo-rate-and-your-emi/), acts independently of election results.
+- **Markets:** US political deadlock tends to mean fewer surprises in law but more drama over budgets, and American markets set the tone for foreign investment flows into India. Interest rates still matter more, and the US Federal Reserve, like the RBI with [the repo rate](/markets/repo-rate-and-your-emi/), acts independently of election results.
 - **Technology:** closer scrutiny of AI chip exports affects every country that buys US hardware, including India.
 
 ## What to watch next
