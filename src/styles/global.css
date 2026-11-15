@@ -57,10 +57,30 @@ h1, h2, h3, p { margin: 0; }
 .topbar { background: var(--soft); border-bottom: 1px solid var(--line); font-size: 13px; color: var(--ink-3); }
 .topbar .wrap { display: flex; align-items: center; gap: 18px; padding-top: 8px; padding-bottom: 8px; min-width: 0; }
 .today { white-space: nowrap; }
-.ticker { display: flex; align-items: center; gap: 10px; min-width: 0; color: var(--ink); font-weight: 600; }
-.ticker-badge { flex: none; background: var(--accent); color: #fff; font: 800 11px/1 var(--sans); letter-spacing: 0.06em; text-transform: uppercase; padding: 5px 8px; border-radius: 3px; }
-.ticker-text { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-@media (max-width: 640px) { .today { display: none; } }
+.topbar .wrap { justify-content: space-between; }
+.topbar-links { display: flex; gap: 18px; white-space: nowrap; }
+.topbar-links a:hover { color: var(--ink); }
+@media (max-width: 640px) { .today { display: none; } .topbar .wrap { justify-content: center; } }
+
+/* Scrolling "Breaking News" strip under the menu. Pauses when you hover over it. */
+.breaking { display: flex; align-items: stretch; background: var(--soft); border-bottom: 1px solid var(--line); }
+.breaking-label { flex: none; display: flex; align-items: center; padding: 0 18px; background: var(--brand); color: var(--bg); font: 800 13px/1 var(--sans); letter-spacing: 0.04em; text-transform: uppercase; white-space: nowrap; position: relative; z-index: 1; }
+.breaking-track { flex: 1; min-width: 0; overflow: hidden; }
+.breaking-move { display: flex; width: max-content; animation: breaking-scroll 60s linear infinite; }
+.breaking:hover .breaking-move, .breaking:focus-within .breaking-move { animation-play-state: paused; }
+.breaking ul { display: flex; flex: none; list-style: none; margin: 0; padding: 0; }
+.breaking li { display: flex; align-items: center; white-space: nowrap; }
+.breaking li::after { content: ''; width: 1px; height: 18px; background: var(--ink-3); opacity: 0.5; }
+.breaking a { display: block; padding: 11px 22px; font: 600 14px/1.3 var(--sans); color: var(--ink); }
+.breaking a:hover { color: var(--accent-ink); text-decoration: underline; text-underline-offset: 3px; }
+@keyframes breaking-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@media (max-width: 640px) { .breaking-label { padding: 0 12px; font-size: 11px; } .breaking a { padding: 10px 16px; font-size: 13px; } }
+/* People who turn off animations get a strip they can swipe instead. */
+@media (prefers-reduced-motion: reduce) {
+  .breaking-move { animation: none; }
+  .breaking-track { overflow-x: auto; scrollbar-width: none; }
+  .breaking ul[aria-hidden='true'] { display: none; }
+}
 
 .masthead { text-align: center; padding: 22px 16px 16px; }
 .logo { display: inline-flex; align-items: center; gap: 12px; color: var(--brand); }

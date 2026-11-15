@@ -34,7 +34,8 @@ const path = Astro.url.pathname;
 const year = new Date().getFullYear();
 // Logo: a trailing "today" is shown in the accent colour.
 const [, logoA = brandName, logoB = ''] = brandName.match(/^(.*?)(today)$/i) ?? [];
-const latest = (await getArticles())[0];
+// Headlines for the scrolling "Breaking News" strip: the newest stories.
+const breaking = (await getArticles()).slice(0, 8);
 const schemas = (Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : []);
 // Every page carries the publisher details, so Google can connect stories to the site.
 if (!schemas.some((s) => s['@graph'])) schemas.push({ '@context': 'https://schema.org', ...organization() });
@@ -105,12 +106,7 @@ if (!schemas.some((s) => s['@graph'])) schemas.push({ '@context': 'https://schem
       <div class="topbar">
         <div class="wrap">
           <span class="today" id="today">&nbsp;</span>
-          {latest && (
-            <a class="ticker" href={articleUrl(latest)}>
-              <span class="ticker-badge">Latest</span>
-              <span class="ticker-text">{latest.data.title}</span>
-            </a>
-          )}
+          <span class="topbar-links"><a href="/about/">About Us</a><a href="/editorial-standards/">Editorial Standards</a><a href="/contact/">Contact</a></span>
         </div>
       </div>
       <div class="masthead">
@@ -129,6 +125,22 @@ if (!schemas.some((s) => s['@graph'])) schemas.push({ '@context': 'https://schem
           <li><a href="/contact/" aria-current={path.startsWith('/contact') ? 'page' : undefined}>Contact Us</a></li>
         </ul>
       </nav>
+      {breaking.length > 0 && (
+        <div class="breaking" aria-label="Breaking news">
+          <span class="breaking-label">Breaking News</span>
+          <div class="breaking-track">
+            <!-- The list is printed twice so the scroll loops without a gap. -->
+            <div class="breaking-move">
+              <ul>
+                {breaking.map((a) => <li><a href={articleUrl(a)}>{a.data.title}</a></li>)}
+              </ul>
+              <ul aria-hidden="true">
+                {breaking.map((a) => <li><a href={articleUrl(a)} tabindex="-1">{a.data.title}</a></li>)}
+              </ul>
+            </div>
+          </div>
+        </div>
+      )}
     </header>
 
     <main id="main">
