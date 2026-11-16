@@ -2,6 +2,7 @@
 title: "Trump Heads to Asia After Midterm Losses: A Quad Meeting in Manila, Then Xi and Putin in Shenzhen"
 description: "Donald Trump travels to Manila and Shenzhen this week for Quad, ASEAN and APEC meetings, and a three-way meeting with Xi and Putin. Here is the agenda and what is at stake."
 date: 2026-11-15T22:56:00+05:30
+updated: 2026-11-16T20:29:00+05:30
 category: world
 image: /images/air-force-one-on-the-ground.jpg
 imageAlt: "The blue and white presidential aircraft Air Force One on a runway, with snow-capped mountains in the background"
@@ -14,6 +15,20 @@ US President Donald Trump leaves for Asia this week, two weeks after elections t
 The trip takes him to Manila for meetings with South-East Asian leaders and the Quad, and then to Shenzhen for the Asia-Pacific Economic Cooperation (APEC) summit. There he is due to meet China's Xi Jinping and to take part in what would be the first three-way meeting of the American, Chinese and Russian leaders.
 
 For Trump it is a chance to change the subject after a bad fortnight at home. For Asia, including India, it is the most consequential week of diplomacy this year.
+
+## Update, 16 November: China confirms the three-way meeting
+
+China's foreign ministry has confirmed that Xi Jinping will meet Vladimir Putin and Donald Trump in Shenzhen on Thursday, CNBC reported. Moscow and the White House had already announced it. Trump has left Washington for the four-day trip.
+
+What each side wants to discuss differs:
+
+- **Nuclear weapons.** The White House says Trump will raise reducing nuclear arsenals worldwide.
+- **Iran.** Trump will raise the war, according to a US official.
+- **Ukraine.** Russia wants it on the agenda. The White House is not expected to raise it.
+- **Trade.** The truce between the US and China expires in January, and analysts largely expect it to be extended.
+- **Chips.** The Nvidia affair is unlikely to be discussed, analysts said.
+
+Expectations are low. Neo Wang of Evercore ISI said the main hurdle is "a disagreement over the agenda" and that a joint statement on Ukraine or sanctions looks unlikely. David Roche, a veteran strategist, called the meeting an "almost 100% photo op" and said China has no interest in disarmament talks until its arsenal matches America's, which he put at about ten years away. Peter Alexander of Z-Ben Advisors said simply bringing the three leaders together benefits Xi "even before the discussions begin".
 
 ## Key points
 

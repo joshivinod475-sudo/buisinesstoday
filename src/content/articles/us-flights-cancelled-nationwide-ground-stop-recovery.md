@@ -2,6 +2,7 @@
 title: "Thousands of US Flights Cancelled After Nationwide Ground Stop: What Happened and When It Ends"
 description: "A four-hour halt to all US departures on 13 November led to thousands of cancellations over the weekend. Here is the timeline, the cause and advice for travellers."
 date: 2026-11-15T23:08:00+05:30
+updated: 2026-11-16T20:29:00+05:30
 category: world
 image: /images/airport-departures-board-cancelled-flights.jpg
 imageAlt: "A row of airport departure screens listing dozens of flights, many of them marked as cancelled"
@@ -27,6 +28,23 @@ The order, known as a nationwide ground stop, lasted a little more than four hou
 **Saturday, 14 November.** Airlines cancelled thousands more flights. Passengers slept in terminals or looked for hire cars, buses and trains. Several sports fixtures were rescheduled.
 
 **Sunday, 15 November.** Cancellations fell to about 1,500 as operations recovered. FAA administrator Bryan Bedford said the "worst is behind us".
+
+## Update, 16 November: the final count
+
+About 18,000 US flights were cancelled between Friday and Monday morning, according to the tracking service FlightAware, CNBC reported. Hundreds of thousands of travellers were stranded. Bad weather on Thursday and Friday added to the disruption.
+
+By Monday the system was close to normal, with nearly 300 cancellations and about 1,000 delays, a fraction of Sunday's figures.
+
+The aviation data firm Cirium counted the cancellations by airline:
+
+| Airline | Flights cancelled | Share of schedule |
+|---|---|---|
+| American | 5,367 | About 22% |
+| Delta | 3,434 | About 17% |
+| Southwest | Not given | More than 16% |
+| United | Not given | More than 16% |
+
+Airlines waived change fees and fare differences and offered extra pay to pilots and cabin crew to get aircraft moving. The cause is still under investigation. Two routers, from facilities in Arkansas and Texas, are being examined at a laboratory run by the contractor L3Harris.
 
 ## How many flights were affected
 

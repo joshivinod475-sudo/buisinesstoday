@@ -2,6 +2,7 @@
 title: "'Stand With Jensen': Musk and Other Tech Leaders Back a Petition to Bring Huang Back to Nvidia"
 description: "A petition asking Nvidia's board to reconsider Jensen Huang's exit has about 180,000 signatures and support from Elon Musk and big investors. Here is why a return is unlikely."
 date: 2026-11-16T20:07:00+05:30
+updated: 2026-11-16T20:29:00+05:30
 category: tech
 image: /images/nvidia-logo-sign.jpg
 imageAlt: "A white sign with the green Nvidia logo and a street address, standing among trees and shrubs outside an office campus"
@@ -14,6 +15,10 @@ Four days after Jensen Huang resigned as chief executive of Nvidia, a campaign t
 An online petition called "Stand with Jensen" had nearly 180,000 signatures by Sunday, CNBC reported. Elon Musk said he had signed it. Two of Nvidia's large shareholders have written to the board asking it to keep the option of his return open.
 
 Analysts and people who follow government investigations think it will not happen. Here is who is asking, what they want, and why the odds are against them.
+
+## Update, 16 November: shares fall again
+
+Nvidia's shares fell about 2% on Monday, CNBC reported, extending a slide that wiped hundreds of billions of dollars off the company's value last week. The petition had passed 170,000 signatures. Investors are waiting for Tuesday's quarterly results, the first to be presented by interim chief executive Colette Kress.
 
 ## Key points
 

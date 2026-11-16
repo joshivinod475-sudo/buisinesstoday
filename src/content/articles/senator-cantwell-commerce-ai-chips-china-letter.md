@@ -2,6 +2,7 @@
 title: "US Senator Accuses the Commerce Department of Failing to Stop AI Chips Reaching China"
 description: "Senator Maria Cantwell says the Commerce Department delayed action on security warnings and that a 25% fee on chip sales creates a conflict. Here is what her letter says."
 date: 2026-11-16T20:05:00+05:30
+updated: 2026-11-16T20:29:00+05:30
 category: world
 image: /images/us-commerce-department-building-washington.jpg
 imageAlt: "The long columned stone facade of the US Department of Commerce building in Washington, with trees along the street in front"
@@ -30,9 +31,21 @@ She makes three specific points, according to Reuters.
 
 **Delay.** The department, she says, did not act on repeated warnings from other parts of the government.
 
-**The Megaspeed inquiry.** Cantwell says Commerce suspended a probe into Megaspeed. US authorities have been examining whether the company helped Chinese customers obtain Nvidia chips that are subject to export controls, The New York Times reported in October 2025.
+**The Megaspeed inquiry.** Cantwell says Commerce suspended a probe into Megaspeed, according to Reuters. CNBC's account is more cautious: it cites a New York Times report of 9 November alleging that the department may have slow-walked the investigation. US authorities have been examining whether the company helped Chinese customers obtain Nvidia chips that are subject to export controls, the Times reported in October 2025.
 
 **Conflicts.** She says financial conflicts raise "serious questions" about whether business interests were put ahead of national security, and she singles out the fee the administration collects on some chip exports.
+
+## What she wants done
+
+CNBC reported further detail from the letter on 16 November.
+
+- Cantwell asks Lutnick to use his powers under the Export Control Reform Act of 2018 to enforce the rules and to stop chips flowing to companies barred from receiving them.
+- She wrote that the department "has resisted efforts to restrict companies flagged as national security threats", and that its failures "help give away America's technology advantage in AI".
+- On conflicts, she says Cantor Fitzgerald, the firm now controlled by Lutnick's sons, held $1.2 billion of Nvidia shares when he was nominated. Cantor has said its Nvidia positions were linked to client transactions and were not its own investments, and CNBC has reported no evidence that Lutnick shared sensitive information.
+
+The Commerce Department did not immediately respond to CNBC. A spokesperson said last week that Lutnick has agreed to testify before the Senate Banking Committee, whose Republican chair, Tim Scott, has called both him and Jensen Huang to appear in December.
+
+Separately, Senators Elizabeth Warren and Chris Coons have written to Lutnick, the Secretary of State and the White House asking them to preserve all records on Nvidia's chip exports to China, with confirmation requested by 17 November.
 
 ## What Megaspeed says
 
