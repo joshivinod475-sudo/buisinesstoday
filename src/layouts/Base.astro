@@ -53,6 +53,16 @@ if (!schemas.some((s) => s['@graph'])) schemas.push({ '@context': 'https://schem
   <head>
     <!-- Lets the styles know scripts are on, so the mobile menu can start closed. -->
     <script is:inline>document.documentElement.className += ' js';</script>
+    <!-- Light or dark theme, set before the page is drawn so it never flashes the
+         wrong colours: the reader's saved choice, otherwise the device setting. -->
+    <script is:inline>
+      (function () {
+        var saved = null;
+        try { saved = localStorage.getItem('theme'); } catch (e) {}
+        var dark = saved === 'dark' || (saved !== 'light' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+      })();
+    </script>
     <!-- Google tag (Google Analytics / GA4) -->
     <script is:inline async src="https://www.googletagmanager.com/gtm.js?id=GTM-TJM2GG8R"></script>
     <script is:inline>
@@ -116,12 +126,17 @@ if (!schemas.some((s) => s['@graph'])) schemas.push({ '@context': 'https://schem
       <div class="topbar">
         <div class="wrap">
           <span class="today" id="today">&nbsp;</span>
-          <span class="topbar-links"><a href="/about/">About Us</a><a href="/editorial-standards/">Editorial Standards</a><a href="/contact/">Contact</a></span>
+          <span class="topbar-links"><a href="/about/">About Us</a><a href="/editorial-standards/">Editorial Standards</a><a href="/contact/">Contact</a>
+            <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark theme" title="Switch between light and dark">
+              <svg class="icon-moon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z" fill="currentColor"/></svg>
+              <svg class="icon-sun" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="currentColor"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+          </span>
         </div>
       </div>
       <div class="masthead">
         <a class="logo" href="/" aria-label={`${brandName} home`}>
-          <svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="currentColor"/><rect x="14" y="36" width="8" height="14" rx="2" fill="#fbbf24"/><rect x="28" y="26" width="8" height="24" rx="2" fill="#fff"/><rect x="42" y="14" width="8" height="36" rx="2" fill="#fff"/></svg>
+          <svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="currentColor"/><rect x="14" y="36" width="8" height="14" rx="2" fill="#fbbf24"/><rect class="bar" x="28" y="26" width="8" height="24" rx="2" fill="#fff"/><rect class="bar" x="42" y="14" width="8" height="36" rx="2" fill="#fff"/></svg>
           <span class="logo-text">{logoA}<em>{logoB}</em></span>
         </a>
         <p class="strapline">{SITE.strapline}</p>
@@ -269,6 +284,32 @@ if (!schemas.some((s) => s['@graph'])) schemas.push({ '@context': 'https://schem
           if (nav.contains(e.target)) return;
           closeAll();
           if (nav.classList.contains('open')) { nav.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); }
+        });
+      })();
+    </script>
+    <script is:inline>
+      // Light / dark switch. The choice is remembered on this device; until one
+      // is made, the page follows the device setting, including when it changes.
+      (function () {
+        var root = document.documentElement;
+        var btn = document.getElementById('theme-toggle');
+        var meta = document.querySelector('meta[name="theme-color"]');
+        function apply(theme) {
+          root.setAttribute('data-theme', theme);
+          if (meta) meta.setAttribute('content', theme === 'dark' ? '#0f1216' : '#0b2545');
+          if (btn) btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+        }
+        apply(root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light');
+        if (btn) btn.addEventListener('click', function () {
+          var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+          apply(next);
+          try { localStorage.setItem('theme', next); } catch (e) {}
+        });
+        var mq = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
+        if (mq && mq.addEventListener) mq.addEventListener('change', function (e) {
+          var saved = null;
+          try { saved = localStorage.getItem('theme'); } catch (err) {}
+          if (saved !== 'dark' && saved !== 'light') apply(e.matches ? 'dark' : 'light');
         });
       })();
     </script>

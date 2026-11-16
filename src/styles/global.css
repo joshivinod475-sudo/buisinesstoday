@@ -16,8 +16,25 @@
   --radius: 8px;
   color-scheme: light;
 }
+/* Dark theme. The reader's choice (the sun/moon button) is stored as
+   data-theme on <html>. With no choice made, the device setting decides. */
+:root[data-theme='dark'] {
+  --bg: #0f1216;
+  --surface: #161a20;
+  --soft: #161a20;
+  --ink: #eceae6;
+  --ink-2: #c3c6cc;
+  --ink-3: #8d939c;
+  --line: #2a2f37;
+  --brand: #e9eef6;
+  --accent: #f59e0b;
+  --accent-ink: #fbbf24;
+  --link: #7cb4ff;
+  color-scheme: dark;
+}
+/* The same colours for readers with scripts turned off, following the device. */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme]) {
     --bg: #0f1216;
     --surface: #161a20;
     --soft: #161a20;
@@ -60,6 +77,16 @@ h1, h2, h3, p { margin: 0; }
 .topbar .wrap { justify-content: space-between; }
 .topbar-links { display: flex; gap: 18px; white-space: nowrap; }
 .topbar-links a:hover { color: var(--ink); }
+.topbar-links { align-items: center; }
+/* Light / dark switch: a moon in the light theme, a sun in the dark one. */
+.theme-toggle { display: flex; align-items: center; justify-content: center; width: 30px; height: 30px; margin: -5px 0; padding: 0; background: var(--bg); border: 1px solid var(--line); border-radius: 50%; color: var(--ink-2); cursor: pointer; }
+.theme-toggle:hover { color: var(--accent-ink); border-color: var(--ink-3); }
+.theme-toggle .icon-sun { display: none; }
+:root[data-theme='dark'] .theme-toggle .icon-sun { display: block; }
+:root[data-theme='dark'] .theme-toggle .icon-moon { display: none; }
+html:not(.js) .theme-toggle { display: none; }
+.logo-mark .bar { fill: var(--bg); }
+@media (max-width: 400px) { .topbar-links { gap: 12px; } }
 @media (max-width: 640px) { .today { display: none; } .topbar .wrap { justify-content: center; } }
 
 /* Scrolling "Breaking News" strip under the menu. Pauses when you hover over it. */
@@ -266,7 +293,8 @@ main { padding: 28px 0 64px; }
 
 /* ── Footer ───────────────────────────────── */
 .site-footer { background: #0b2545; color: #cbd5e1; padding: 48px 0 28px; font-size: 14px; }
-@media (prefers-color-scheme: dark) { .site-footer { background: #0a0d11; border-top: 1px solid var(--line); } }
+:root[data-theme='dark'] .site-footer { background: #0a0d11; border-top: 1px solid var(--line); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme]) .site-footer { background: #0a0d11; border-top: 1px solid var(--line); } }
 .site-footer a:hover { color: #fff; }
 .foot-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 36px; }
 @media (max-width: 720px) { .foot-grid { grid-template-columns: 1fr 1fr; } .foot-about { grid-column: 1 / -1; } }
