@@ -314,6 +314,39 @@ if (!schemas.some((s) => s['@graph'])) schemas.push({ '@context': 'https://schem
       })();
     </script>
     <script is:inline>
+      // "5 min ago", "3 hours ago", "2 days ago" next to each story's date and time,
+      // for the past week. Stories with a date but no time of day are left as they are.
+      (function () {
+        var times = document.querySelectorAll('time[datetime]');
+        function ago(ms) {
+          var m = Math.floor(ms / 60000);
+          if (m < 1) return 'Just now';
+          if (m < 60) return m + ' min ago';
+          var h = Math.floor(m / 60);
+          if (h < 24) return h + (h === 1 ? ' hour ago' : ' hours ago');
+          var d = Math.floor(h / 24);
+          if (d < 7) return d === 1 ? 'Yesterday' : d + ' days ago';
+          return '';
+        }
+        function update() {
+          var now = Date.now();
+          times.forEach(function (t) {
+            var iso = t.getAttribute('datetime');
+            if (!iso || /T00:00:00(\.000)?Z$/.test(iso)) return;
+            var when = Date.parse(iso);
+            if (isNaN(when)) return;
+            var label = now >= when ? ago(now - when) : '';
+            var tag = t.nextElementSibling && t.nextElementSibling.classList.contains('ago') ? t.nextElementSibling : null;
+            if (!label) { if (tag) tag.remove(); return; }
+            if (!tag) { tag = document.createElement('span'); tag.className = 'ago'; t.insertAdjacentElement('afterend', tag); }
+            tag.textContent = label;
+          });
+        }
+        update();
+        setInterval(update, 60000);
+      })();
+    </script>
+    <script is:inline>
       document.getElementById('today').textContent = new Date().toLocaleDateString('en-IN', {
         weekday: 'long', day: 'numeric', month: 'long', year: 'numeric',
       });

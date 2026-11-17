@@ -10,8 +10,17 @@ export async function getArticles(): Promise<Article[]> {
   return all.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 }
 
+/** True when the front matter gave a time of day, not just a date (a bare date is midnight UTC). */
+export function hasTime(d: Date) {
+  return d.getUTCHours() !== 0 || d.getUTCMinutes() !== 0;
+}
+
+/** "17 Nov 2026, 9:22 pm IST", or just "17 Nov 2026" for stories published with a date only. */
 export function formatDate(d: Date) {
-  return d.toLocaleDateString(SITE.locale, { day: 'numeric', month: 'short', year: 'numeric', timeZone: SITE.timeZone });
+  const day = d.toLocaleDateString(SITE.locale, { day: 'numeric', month: 'short', year: 'numeric', timeZone: SITE.timeZone });
+  if (!hasTime(d)) return day;
+  const time = d.toLocaleTimeString(SITE.locale, { hour: 'numeric', minute: '2-digit', hour12: true, timeZone: SITE.timeZone });
+  return `${day}, ${time.replace(/\s?(am|pm)$/i, (m) => ' ' + m.trim().toLowerCase())} IST`;
 }
 
 /** 2026-11-15T07:00:00Z — the format Google expects in sitemaps and schema. */
