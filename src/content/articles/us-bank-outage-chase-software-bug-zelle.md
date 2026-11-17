@@ -2,6 +2,7 @@
 title: "Chase Blames a Software Bug as Customers of Several Big US Banks Report Outages"
 description: "Thousands of customers of Chase, Bank of America, U.S. Bank and Wells Fargo reported problems on Monday. Chase says a software bug was the cause, not a cyberattack."
 date: 2026-11-17T09:22:00+05:30
+updated: 2026-11-17T21:32:00+05:30
 category: banking
 image: /images/chase-bank-branch-sunnyvale-california.jpg
 imageAlt: "The entrance of a single-storey Chase bank branch with a large blue Chase sign above glass doors and a cash machine beside them"
@@ -12,6 +13,12 @@ tags: ["JPMorgan Chase", "Banking", "Outage", "Zelle", "Payments", "Fraud Preven
 Customers of several of the largest banks in the United States reported trouble reaching their accounts and moving money on Monday, 16 November. JPMorgan Chase, the country's biggest bank, said a software bug in its own systems was responsible and that it was not a cyberattack.
 
 Chase said customers kept access to their funds throughout. By Monday evening it said transactions were posting normally.
+
+## Update, 17 November: services back to normal
+
+Chase said the problem had been resolved, and reports of outages at Chase, Bank of America and U.S. Bank had fallen by Monday evening US time, the BBC reported. Chase repeated that the cause was a software bug in its hardware systems, that the problem was "not a systemic issue", and that other banks were affected "only to the extent that they were a party to a transaction with us".
+
+Customers had also reported problems with Truist, PNC and Capital One. All three told the BBC they had not been affected, which fits Chase's explanation: their customers were most likely seeing delays on payments to or from Chase accounts. Chase serves more than 86 million consumers and 7.4 million small businesses in the US. It has not published a detailed technical account.
 
 ## Key points
 

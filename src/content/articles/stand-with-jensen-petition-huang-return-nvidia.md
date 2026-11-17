@@ -2,7 +2,7 @@
 title: "'Stand With Jensen': Musk and Other Tech Leaders Back a Petition to Bring Huang Back to Nvidia"
 description: "A petition asking Nvidia's board to reconsider Jensen Huang's exit has about 180,000 signatures and support from Elon Musk and big investors. Here is why a return is unlikely."
 date: 2026-11-16T20:07:00+05:30
-updated: 2026-11-16T20:29:00+05:30
+updated: 2026-11-17T21:32:00+05:30
 category: tech
 image: /images/nvidia-logo-sign.jpg
 imageAlt: "A white sign with the green Nvidia logo and a street address, standing among trees and shrubs outside an office campus"
@@ -15,6 +15,14 @@ Four days after Jensen Huang resigned as chief executive of Nvidia, a campaign t
 An online petition called "Stand with Jensen" had nearly 180,000 signatures by Sunday, CNBC reported. Elon Musk said he had signed it. Two of Nvidia's large shareholders have written to the board asking it to keep the option of his return open.
 
 Analysts and people who follow government investigations think it will not happen. Here is who is asking, what they want, and why the odds are against them.
+
+## Update, 17 November: Nvidia's board says no, Trump says he would not mind
+
+Nvidia's board is not interested in reinstating Jensen Huang, the BBC was told, even as President Donald Trump said he "would certainly not mind" seeing him return. The open letter calling for his reinstatement while an internal inquiry continues has passed 175,000 signatures, according to the BBC.
+
+The Financial Times reported that Huang had discussed a possible return with confidants. A representative for Huang declined to comment. Trump's position differs from that of Treasury Secretary Scott Bessent, who has said Nvidia should hire its next chief executive from outside the company.
+
+The same day, the administration issued interim rules requiring companies in Singapore, Thailand, Malaysia, Indonesia and Brazil to obtain export licences for the most advanced AI chips, to stop them being diverted to China. The rules come days before Trump meets Xi Jinping in Shenzhen.
 
 ## Update, 16 November: shares fall again
 
