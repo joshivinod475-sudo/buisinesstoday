@@ -2,7 +2,7 @@
 title: "Thousands of US Flights Cancelled After Nationwide Ground Stop: What Happened and When It Ends"
 description: "A four-hour halt to all US departures on 13 November led to thousands of cancellations over the weekend. Here is the timeline, the cause and advice for travellers."
 date: 2026-11-15T23:08:00+05:30
-updated: 2026-11-16T20:29:00+05:30
+updated: 2026-11-17T21:12:00+05:30
 category: world
 image: /images/airport-departures-board-cancelled-flights.jpg
 imageAlt: "A row of airport departure screens listing dozens of flights, many of them marked as cancelled"
@@ -28,6 +28,14 @@ The order, known as a nationwide ground stop, lasted a little more than four hou
 **Saturday, 14 November.** Airlines cancelled thousands more flights. Passengers slept in terminals or looked for hire cars, buses and trains. Several sports fixtures were rescheduled.
 
 **Sunday, 15 November.** Cancellations fell to about 1,500 as operations recovered. FAA administrator Bryan Bedford said the "worst is behind us".
+
+## Update, 17 November: the investigation, and no sign of a cyberattack
+
+US officials are investigating why the installation of new network equipment set off Friday's nationwide ground stop, Reuters reported. Two routers from Federal Aviation Administration facilities in Arkansas and Texas are being tested to establish whether the fault lay with the equipment or with how it was installed during a fibre upgrade.
+
+Transportation Secretary Sean Duffy said investigators had "no indication" that a hack was involved. A US official also said this week that the run of recent technology failures, including the ground stop, a [Microsoft outage](/tech/microsoft-365-global-outage-restored/), a [bank software bug](/markets/us-bank-outage-chase-software-bug-zelle/) and a [United Airlines system failure](/world/united-airlines-outage-weight-system-flights-delayed/), was not linked to cyberattacks.
+
+Federal auditors have warned for more than 15 years that upgrades to the FAA's telecommunications network carried a risk of outages. Leaders of the House transportation committee have said they will review what went wrong.
 
 ## Update, 16 November: the final count
 
