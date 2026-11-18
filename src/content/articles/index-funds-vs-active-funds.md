@@ -118,7 +118,7 @@ Many investors use both: an index fund as the core of the portfolio and one or t
 3. **For active funds**, compare returns with the benchmark over five and ten years, not one year. Check whether the manager who produced the record is still running the fund.
 4. **Read the scheme information document** for the objective, risk level (shown on the riskometer) and exit load.
 
-Interest rates also shape how equity and debt funds behave. Our explainer on [how the RBI repo rate affects your EMI](/personal-finance/repo-rate-and-your-emi/) covers the link between rates and household money, and for stock investors our guide to [reading quarterly results in five minutes](/markets/read-quarterly-results-in-five-minutes/) shows what drives the companies inside an index. For a wider view of market risk, see our report on [whether the AI boom is nearing its final stages](/economy/ai-boom-final-stages-anthropic-ipo-jobless-growth/). More guides are in our [personal finance section](/category/personal-finance/).
+Interest rates also shape how equity and debt funds behave. Our explainer on [how the RBI repo rate affects your EMI](/markets/repo-rate-and-your-emi/) covers the link between rates and household money, and for stock investors our guide to [reading quarterly results in five minutes](/markets/read-quarterly-results-in-five-minutes/) shows what drives the companies inside an index. For a wider view of market risk, see our report on [whether the AI boom is nearing its final stages](/economy/ai-boom-final-stages-anthropic-ipo-jobless-growth/). More guides are in our [personal finance section](/category/markets/personal-finance/).
 
 ## Frequently asked questions
 

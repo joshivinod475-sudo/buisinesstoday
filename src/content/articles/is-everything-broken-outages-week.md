@@ -2,6 +2,7 @@
 title: "Grounded Flights, a Microsoft Outage and an AI Scandal in One Week: Is Everything Breaking?"
 description: "A global Microsoft outage and a US-wide flight shutdown struck within a day of each other. Officials see no link and no attack. Here is what the failures do have in common."
 date: 2026-11-15T23:00:00+05:30
+updated: 2026-11-18T20:34:00+05:30
 category: tech
 image: /images/technician-working-on-server-rack.jpg
 imageAlt: "A technician in a checked shirt crouches on the floor of a data centre, working on a laptop connected to an open server rack"
@@ -16,6 +17,12 @@ By the weekend a question was circulating in airport queues and online: is somet
 "Is this a cyberattack?" one stranded traveller asked the Associated Press, in a report that captured the mood. Another said there was "a lot of weird stuff going on".
 
 The honest answer is less dramatic than the fear, and more useful.
+
+## Update, 18 November: officials say no cyberattack and no coordination
+
+A senior Trump administration official told reporters on Wednesday that there is "no indication" the recent wave of outages was caused by a cyberattack or any coordinated action. The official said the government had "a great deal of confidence" that the incidents resulted from system upgrades, patches, new hardware and other "disparate" events.
+
+The briefing covered the nationwide ground stop, the long Microsoft Outlook outage, software problems at JPMorgan Chase, the United Airlines delays, issues with Apple products and a reported blackout of the National Security Agency's classified communications network. The Director of National Intelligence, Jay Clayton, told CNBC on Tuesday: "This is not cyberattack, and this is not a coordinated effort by a nation state." That supports the view set out below: the failures look like routine changes going wrong in highly connected systems, not an attack. Details of the reported NSA outage have not been made public.
 
 ## What actually happened
 

@@ -2,7 +2,7 @@
 title: "Trump Heads to Asia After Midterm Losses: A Quad Meeting in Manila, Then Xi and Putin in Shenzhen"
 description: "Donald Trump travels to Manila and Shenzhen this week for Quad, ASEAN and APEC meetings, and a three-way meeting with Xi and Putin. Here is the agenda and what is at stake."
 date: 2026-11-15T22:56:00+05:30
-updated: 2026-11-16T20:29:00+05:30
+updated: 2026-11-18T20:34:00+05:30
 category: world
 image: /images/air-force-one-on-the-ground.jpg
 imageAlt: "The blue and white presidential aircraft Air Force One on a runway, with snow-capped mountains in the background"
@@ -15,6 +15,14 @@ US President Donald Trump leaves for Asia this week, two weeks after elections t
 The trip takes him to Manila for meetings with South-East Asian leaders and the Quad, and then to Shenzhen for the Asia-Pacific Economic Cooperation (APEC) summit. There he is due to meet China's Xi Jinping and to take part in what would be the first three-way meeting of the American, Chinese and Russian leaders.
 
 For Trump it is a chance to change the subject after a bad fortnight at home. For Asia, including India, it is the most consequential week of diplomacy this year.
+
+## Update, 18 November: Trump lands in Shenzhen, and Xi greets him on the tarmac
+
+Trump arrived in Shenzhen on Wednesday from Manila. In an unusual gesture, Xi Jinping met him on the tarmac, which Xi described as reciprocity for Trump greeting him at the airport during a US visit in September. Trump attended a welcome banquet with Secretary of State Marco Rubio, Treasury Secretary Scott Bessent and Commerce Secretary Howard Lutnick.
+
+Opening the APEC summit, Xi called for the removal of trade and investment barriers and for deeper cooperation on the digital economy and artificial intelligence. Putin said Western sanctions had backfired and strengthened Russia. Xi met Putin earlier on Wednesday, and also held talks with South Korea's President Lee Jae Myung, Canada's Prime Minister Mark Carney and Vietnam's President To Lam.
+
+The three-way meeting is set for Thursday. China's foreign ministry has said it will cover the Iran war, Russia's war in Ukraine and strategic stability, though expectations of concrete results are low. Trump will also hold separate talks with Xi, with hopes of extending the trade truce beyond January 2027. Before arriving, Trump said, "I don't think you want to insult China just before you get there," when asked about the dispute over Nvidia chip exports. On the eve of the talks, the US and its European allies clashed publicly over [Ukraine's deep strikes inside Russia](/world/ukraine-deep-strikes-russia-us-europe-rift-kerch-bridge/).
 
 ## Update, 16 November: China confirms the three-way meeting
 

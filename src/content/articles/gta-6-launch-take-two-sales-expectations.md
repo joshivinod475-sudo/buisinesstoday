@@ -2,6 +2,7 @@
 title: "GTA VI Launches on 19 November: What Take-Two Needs From the Biggest Game Release in Years"
 description: "Grand Theft Auto VI goes on sale on Thursday after two delays. Here are the pre-order estimates, what analysts expect and what the launch means for Take-Two's investors."
 date: 2026-11-17T09:26:00+05:30
+updated: 2026-11-18T20:34:00+05:30
 category: tech
 image: /images/playstation-5-dualsense-controller-black.jpg
 imageAlt: "A black PlayStation 5 game controller seen from the front, with two thumbsticks, a directional pad and four action buttons"
@@ -12,6 +13,18 @@ tags: ["GTA VI", "Take-Two Interactive", "Video Games", "Rockstar Games", "Gamin
 Grand Theft Auto VI goes on sale on Thursday, 19 November. It is the first new game in the series in 13 years, it was delayed twice, and analysts expect it to be the largest launch the video game industry has seen.
 
 For Take-Two Interactive, the US company that owns the game's maker, Rockstar Games, a great deal of its financial year depends on the next few weeks.
+
+## Update, 18 November: the day-off question
+
+On the eve of the launch, attention has turned to how many people will skip work to play. Several surveys suggest many fans plan to take time off, mostly through planned leave rather than calling in sick:
+
+| Survey | Finding |
+|---|---|
+| Zety (US workers) | 11% plan to take time off or change their schedules; 22% among Gen Z |
+| GameSquare (US gamers in full-time work) | 10% plan to skip work; another 30% are considering it |
+| Uswitch (UK) | About 2.6 million workers could take time off, including some planning to call in sick |
+
+These are stated intentions, not measured absences, and the samples differ. Some estimates of the cost to the economy, running to about $1 billion in the US, rely on these surveys and should be treated with caution. USA Today profiled fans planning to "play hooky" on launch day. For employers, the practical lesson is simpler: approve leave in advance rather than deal with a wave of sudden sick days.
 
 ## Key points
 

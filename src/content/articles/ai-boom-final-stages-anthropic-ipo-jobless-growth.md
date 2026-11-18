@@ -2,6 +2,7 @@
 title: "Is the AI Boom Near Its End? What Anthropic's IPO and Weak US Hiring Say About the Economy"
 description: "Anthropic is due to list this week in one of the largest share sales ever, as economists warn the AI stock boom is in its late stages and US hiring stays weak."
 date: 2026-11-17T09:30:00+05:30
+updated: 2026-11-18T20:34:00+05:30
 category: economy
 image: /images/new-york-stock-exchange-building-2017.jpg
 imageAlt: "The columned stone front of the New York Stock Exchange building seen from across a busy street, with crowds of people and tall office buildings around it"
@@ -12,6 +13,10 @@ tags: ["AI Bubble", "Anthropic IPO", "US Economy", "Jobs", "Stock Market", "Rece
 The artificial intelligence company Anthropic is due to price its initial public offering on Wednesday and start trading on Thursday. It would be the first of the leading AI developers to list its shares, and one of the largest share sales on record.
 
 It arrives at an awkward moment. Economists are warning that the stock market's AI boom is in its late stages. The US economy is growing, but it is creating few jobs. And Nvidia, the company at the centre of the boom, lost its chief executive this month.
+
+## Update, 18 November: Anthropic expected to price above its range
+
+Anthropic is likely to price its shares above the marketed range of $70 to $78, multiple people told CNBC on Wednesday morning. The research firm New Street Research has issued a "buy" rating with a price target of $105. Trading on Nasdaq is due to begin on Thursday. Nvidia's [better-than-expected quarterly results](/markets/nvidia-q3-earnings-record-revenue-after-huang/) on Tuesday lifted AI stocks ahead of the listing. New US data also showed [productivity grew 3.6% in the third quarter](/economy/us-productivity-q3-2026-ai-boom-workers/) while workers' share of output fell, which fits the "jobless growth" pattern described below.
 
 ## Key points
 
