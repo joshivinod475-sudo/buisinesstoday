@@ -2,7 +2,7 @@
 title: "Trump Heads to Asia After Midterm Losses: A Quad Meeting in Manila, Then Xi and Putin in Shenzhen"
 description: "Donald Trump travels to Manila and Shenzhen this week for Quad, ASEAN and APEC meetings, and a three-way meeting with Xi and Putin. Here is the agenda and what is at stake."
 date: 2026-11-15T22:56:00+05:30
-updated: 2026-11-18T20:34:00+05:30
+updated: 2026-11-19T20:10:00+05:30
 category: world
 image: /images/air-force-one-on-the-ground.jpg
 imageAlt: "The blue and white presidential aircraft Air Force One on a runway, with snow-capped mountains in the background"
@@ -15,6 +15,10 @@ US President Donald Trump leaves for Asia this week, two weeks after elections t
 The trip takes him to Manila for meetings with South-East Asian leaders and the Quad, and then to Shenzhen for the Asia-Pacific Economic Cooperation (APEC) summit. There he is due to meet China's Xi Jinping and to take part in what would be the first three-way meeting of the American, Chinese and Russian leaders.
 
 For Trump it is a chance to change the subject after a bad fortnight at home. For Asia, including India, it is the most consequential week of diplomacy this year.
+
+## Update, 19 November: the three-way meeting takes place
+
+Trump, Xi and Putin held their trilateral meeting in Shenzhen on Thursday. Each leader spoke of a "special responsibility" for global peace. "No peace was ever forged by declining opportunities," Trump said. Xi warned that the "world will be in chaos if major countries fight", while Putin said: "Our three states have joint responsibility in maintaining peace and security." No concrete agreements had been announced at the time of writing. On the same day, Elon Musk clashed publicly with Zelenskyy over [Starshield speed limits in Ukraine](/world/musk-zelenskyy-starshield-starlink-speed-limits-ukraine/).
 
 ## Update, 18 November: Trump lands in Shenzhen, and Xi greets him on the tarmac
 
