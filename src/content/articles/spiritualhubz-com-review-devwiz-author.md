@@ -1,7 +1,8 @@
 ---
-title: "SpiritualHubz.com: What the Site Is, Who 'Devwiz' Is, and What We Checked"
+title: "SpiritualHubz.com (USA): What the Site Is, Who 'Devwiz' Is, and What We Checked"
 description: "SpiritualHubz.com started as a US-focused blog on spiritual meanings and now carries posts on plastics, car filters and Google reviews. Here is what its pages and domain record show."
 date: 2026-11-18T00:55:00+05:30
+updated: 2026-11-21T00:24:00+05:30
 category: marketing
 image: /images/rows-of-lit-candles.jpg
 imageAlt: "Hundreds of small lit candles in glass holders laid out on a dark floor in the winding pattern of a labyrinth"
@@ -26,6 +27,16 @@ People searching for SpiritualHubz.com often add a second phrase: "USA", "about"
 | spiritualhubz.com usa | The site is written for a US audience. Its disclaimer says it is governed by the laws of New York State. No company name or US address is given. |
 | spiritualhubz com about | The site's About page, at spiritualhubz.com/about/, or one of the third-party pages written about it. |
 | spiritualhubz com devwiz author | The author archive at spiritualhubz.com/author/devwiz/, which lists posts by "Nathaniel". |
+
+## Update, 21 November: what "SpiritualHubz.com USA" means
+
+"USA" is now one of the most common words people add when searching for the site. We checked again on 21 November 2026:
+
+- **No US address or company.** The homepage does not mention the USA, the United States or America at all. The only US link is the disclaimer's reference to New York State law.
+- **US English settings.** The site's language is set to US English (en-US), its default for American spelling and date formats.
+- **No new posts.** The site still has 245 posts. The latest, on Indian plastic extrusion manufacturers, was published on 5 October 2026, so nothing new has appeared for about seven weeks.
+
+In other words, "SpiritualHubz.com USA" describes the site's intended audience, not a US-registered business. Several third-party pages use "USA" in their titles about the site, which is one reason the phrase appears in searches. We found the same pattern with [Quotebless.com](/marketing/quotebless-com-review-what-it-is/), another site often searched with "USA" added.
 
 ## What the site was built for
 
