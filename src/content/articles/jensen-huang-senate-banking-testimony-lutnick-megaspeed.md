@@ -2,6 +2,7 @@
 title: "Jensen Huang Agrees to Testify Before Senate Banking Committee, Says Tim Scott"
 description: "Former Nvidia CEO Jensen Huang and Commerce Secretary Howard Lutnick have agreed to appear before the Senate Banking Committee. Here is what senators want to know and what comes next."
 date: 2026-11-18T20:22:00+05:30
+updated: 2026-11-21T23:28:00+05:30
 category: tech
 image: /images/united-states-capitol-west-front-washington.jpg
 imageAlt: "The white domed United States Capitol building in Washington seen from the west lawn under a blue sky"
@@ -19,6 +20,16 @@ Former Nvidia chief executive Jensen Huang has agreed to appear before the US Se
 - Separately, Huang will give a closed-door transcribed interview to three House committees on 1 December. An Nvidia lawyer is due to testify on 2 December.
 - Senators want to know why Megaspeed, a Singapore company that bought Nvidia chips, was not put on the US trade blacklist sooner.
 - Democrats take control of Congress in January and have promised broader investigations.
+
+## Update, 21 November: Huang will testify in public
+
+Jensen Huang will testify publicly when he appears before the Senate Banking Committee, a spokesperson for the committee chair, Senator Tim Scott, said on Friday. Scott had confirmed earlier in the week that Huang agreed to appear, but it was unclear whether the session would be open.
+
+- **Date not yet set.** Scott originally asked Huang to appear on 3 December. His office has not confirmed a date. Scott said he hopes to hear from Huang and Commerce Secretary Howard Lutnick "before Christmas".
+- **House interview first.** Huang has separately agreed to a closed-door, transcribed interview with three House committees on 1 December. An Nvidia lawyer is due to testify on 2 December.
+- **Deadline.** The new Congress convenes on 3 January, when Senator Elizabeth Warren is expected to take over as chair of the Banking Committee. A hearing in the current session would be led by Republicans.
+
+A public hearing means Huang's answers about the affair, the alleged Chinese intelligence link and export controls will be on the record and televised. His departure has weighed on Nvidia's shares, which fell 23% this week, as we explain in our report on [Anthropic's debut and the Nasdaq's worst week since 2020](/markets/anthropic-ipo-debut-nasdaq-worst-week-venture-capital/).
 
 ## Why Congress wants to hear from Huang
 

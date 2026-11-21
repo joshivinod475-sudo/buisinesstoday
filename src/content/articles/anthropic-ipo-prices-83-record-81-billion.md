@@ -2,6 +2,7 @@
 title: "Anthropic IPO Prices at $83 a Share, Raising a Record $81.3 Billion"
 description: "Anthropic priced its IPO above the expected range and raised $81.3 billion, the largest listing ever. Here is what the numbers mean, how retail investors get exposure and the risks."
 date: 2026-11-19T19:50:00+05:30
+updated: 2026-11-21T23:28:00+05:30
 category: markets
 image: /images/nasdaq-marketsite-times-square.jpg
 imageAlt: "Inside the Nasdaq MarketSite studio in New York, with walls of screens showing share prices and a television interview taking place in front"
@@ -12,6 +13,8 @@ tags: ["Anthropic IPO", "IPO", "Nasdaq", "Artificial Intelligence", "Stock Marke
 Anthropic, the artificial intelligence company behind the Claude models, priced its initial public offering at $83 a share, above its marketed range of $70 to $78. Selling around 980 million shares, it raised about $81.3 billion, the largest IPO on record, overtaking SpaceX's listing in June, CNBC reported.
 
 The shares are due to begin trading on Nasdaq on Thursday under the ticker "ANT". At the offer price, Anthropic's fully diluted market value is around $1.5 trillion.
+
+**Update, 21 November:** Anthropic shares opened at $111.50 on their first day of trading and rose 17%, but closed on Friday at $88.91 as the Nasdaq had its worst week since 2020. CNBC now puts the IPO proceeds at $93.5 billion. Read our [report on the debut and who made money](/markets/anthropic-ipo-debut-nasdaq-worst-week-venture-capital/).
 
 ## Key points
 
