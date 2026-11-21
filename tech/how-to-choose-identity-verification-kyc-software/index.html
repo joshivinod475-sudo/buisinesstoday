@@ -1,0 +1,241 @@
+<!DOCTYPE html><html lang="en"> <head><!-- Lets the styles know scripts are on, so the mobile menu can start closed. --><script>document.documentElement.className += ' js';</script><!-- Light or dark theme, set before the page is drawn so it never flashes the
+         wrong colours: the reader's saved choice, otherwise the device setting. --><script>
+      (function () {
+        var saved = null;
+        try { saved = localStorage.getItem('theme'); } catch (e) {}
+        var dark = saved === 'dark' || (saved !== 'light' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+      })();
+    </script><!-- Google tag (Google Analytics / GA4) --><script async src="https://www.googletagmanager.com/gtm.js?id=GTM-TJM2GG8R"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    </script><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>How to Choose Identity Verification Software: What to Test Before You Sign a KYC Contract</title><meta name="description" content="Vendors of digital KYC all claim high accuracy. Here are the standards that matter, the numbers to ask for and a seven-part test to run on your own customers first."><link rel="canonical" href="https://buisinesstoday.com/tech/how-to-choose-identity-verification-kyc-software/"><meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"><meta name="google-site-verification" content="rAW3rqU6x_EAVloKFvAhc8CqZxrWDnViL-polkfqPDQ"><meta name="google-site-verification" content="RBZkIAS2ZtUwa6sW-SHUZjdQuY0AyGdAh8t8m0-nGEg"><meta name="theme-color" content="#0b2545"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="sitemap" type="application/xml" href="/sitemap_index.xml"><link rel="alternate" type="application/rss+xml" title="Buisinesstoday" href="/rss.xml"><meta property="og:site_name" content="Buisinesstoday"><meta property="og:locale" content="en_IN"><meta property="og:type" content="article"><meta property="og:title" content="How to Choose Identity Verification Software: What to Test Before You Sign a KYC Contract"><meta property="og:description" content="Vendors of digital KYC all claim high accuracy. Here are the standards that matter, the numbers to ask for and a seven-part test to run on your own customers first."><meta property="og:url" content="https://buisinesstoday.com/tech/how-to-choose-identity-verification-kyc-software/"><meta property="og:image" content="https://buisinesstoday.com/images/v/indian-passport-cover-1200x675.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="675"><meta property="og:image:alt" content="A dark blue Indian passport with the national emblem and a biometric chip symbol in gold on its cover, lying on a wooden table"><meta property="article:published_time" content="2026-11-16T15:18:00Z"><meta property="article:modified_time" content="2026-11-16T15:18:00Z"><meta property="article:section" content="Tech &#38; AI"><meta property="article:author" content="https://buisinesstoday.com/author/editorial-desk/"><meta name="author" content="Editorial Desk"><meta property="article:tag" content="KYC"><meta property="article:tag" content="Identity Verification"><meta property="article:tag" content="Fintech"><meta property="article:tag" content="Fraud Prevention"><meta property="article:tag" content="Deepfakes"><meta property="article:tag" content="Compliance"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="How to Choose Identity Verification Software: What to Test Before You Sign a KYC Contract"><meta name="twitter:description" content="Vendors of digital KYC all claim high accuracy. Here are the standards that matter, the numbers to ask for and a seven-part test to run on your own customers first."><meta name="twitter:image" content="https://buisinesstoday.com/images/v/indian-passport-cover-1200x675.jpg"><meta name="twitter:image:alt" content="A dark blue Indian passport with the national emblem and a biometric chip symbol in gold on its cover, lying on a wooden table"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preconnect" href="https://images.unsplash.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet"><script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","@id":"https://buisinesstoday.com/tech/how-to-choose-identity-verification-kyc-software/#article","url":"https://buisinesstoday.com/tech/how-to-choose-identity-verification-kyc-software/","mainEntityOfPage":{"@type":"WebPage","@id":"https://buisinesstoday.com/tech/how-to-choose-identity-verification-kyc-software/"},"isPartOf":{"@type":"WebSite","@id":"https://buisinesstoday.com/#website","name":"Buisinesstoday","url":"https://buisinesstoday.com/"},"headline":"How to Choose Identity Verification Software: What to Test Before You Sign a KYC Contract","description":"Vendors of digital KYC all claim high accuracy. Here are the standards that matter, the numbers to ask for and a seven-part test to run on your own customers first.","inLanguage":"en","wordCount":1252,"thumbnailUrl":"https://buisinesstoday.com/images/v/indian-passport-cover-1200x675.jpg","image":["https://buisinesstoday.com/images/v/indian-passport-cover-1600x900.jpg","https://buisinesstoday.com/images/v/indian-passport-cover-1600x1200.jpg","https://buisinesstoday.com/images/v/indian-passport-cover-1200x1200.jpg"],"datePublished":"2026-11-16T15:18:00Z","dateModified":"2026-11-16T15:18:00Z","articleSection":"Tech & AI","keywords":"KYC, Identity Verification, Fintech, Fraud Prevention, Deepfakes, Compliance","author":[{"@type":"Organization","@id":"https://buisinesstoday.com/author/editorial-desk/#author","name":"Editorial Desk","url":"https://buisinesstoday.com/author/editorial-desk/"}],"publisher":{"@type":"NewsMediaOrganization","@id":"https://buisinesstoday.com/#organization","name":"Buisinesstoday","url":"https://buisinesstoday.com/","email":"contact@buisinesstoday.com","description":"Buisinesstoday covers world business news, the economy, markets and finance, technology and AI, SMEs and startups, and real estate with clear, independent reporting.","logo":{"@type":"ImageObject","url":"https://buisinesstoday.com/logo-512.png","width":512,"height":512},"image":"https://buisinesstoday.com/og-default.jpg","contactPoint":[{"@type":"ContactPoint","contactType":"editorial","email":"contact@buisinesstoday.com","url":"https://buisinesstoday.com/contact/","availableLanguage":"English"}],"knowsAbout":["World Business","Economy","Markets & Finance","Tech & AI","SMEs & Startups","Marketing","Real Estate","Healthcare"],"publishingPrinciples":"https://buisinesstoday.com/editorial-standards/","ethicsPolicy":"https://buisinesstoday.com/editorial-standards/","correctionsPolicy":"https://buisinesstoday.com/editorial-standards/#corrections","actionableFeedbackPolicy":"https://buisinesstoday.com/editorial-standards/#feedback"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://buisinesstoday.com/"},{"@type":"ListItem","position":2,"name":"Tech & AI","item":"https://buisinesstoday.com/category/tech/"},{"@type":"ListItem","position":3,"name":"Cybersecurity","item":"https://buisinesstoday.com/category/tech/cybersecurity/"},{"@type":"ListItem","position":4,"name":"How to Choose Identity Verification Software: What to Test Before You Sign a KYC Contract","item":"https://buisinesstoday.com/tech/how-to-choose-identity-verification-kyc-software/"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsMediaOrganization","@id":"https://buisinesstoday.com/#organization","name":"Buisinesstoday","url":"https://buisinesstoday.com/","email":"contact@buisinesstoday.com","description":"Buisinesstoday covers world business news, the economy, markets and finance, technology and AI, SMEs and startups, and real estate with clear, independent reporting.","logo":{"@type":"ImageObject","url":"https://buisinesstoday.com/logo-512.png","width":512,"height":512},"image":"https://buisinesstoday.com/og-default.jpg","contactPoint":[{"@type":"ContactPoint","contactType":"editorial","email":"contact@buisinesstoday.com","url":"https://buisinesstoday.com/contact/","availableLanguage":"English"}],"knowsAbout":["World Business","Economy","Markets & Finance","Tech & AI","SMEs & Startups","Marketing","Real Estate","Healthcare"],"publishingPrinciples":"https://buisinesstoday.com/editorial-standards/","ethicsPolicy":"https://buisinesstoday.com/editorial-standards/","correctionsPolicy":"https://buisinesstoday.com/editorial-standards/#corrections","actionableFeedbackPolicy":"https://buisinesstoday.com/editorial-standards/#feedback"}</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5532911042066130" crossorigin="anonymous"></script><link rel="stylesheet" href="/_astro/about.kKRkDrrC.css"></head> <body> <a class="skip" href="#main">Skip to content</a> <header class="site-header"> <div class="topbar"> <div class="wrap"> <span class="today" id="today">&nbsp;</span> <span class="topbar-links"><a href="/about/">About Us</a><a href="/editorial-standards/">Editorial Standards</a><a href="/contact/">Contact</a> <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark theme" title="Switch between light and dark"> <svg class="icon-moon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z" fill="currentColor"></path></svg> <svg class="icon-sun" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="currentColor"></circle><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg> </button> </span> </div> </div> <div class="masthead"> <a class="logo" href="/" aria-label="Buisinesstoday home"> <svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="currentColor"></rect><rect x="14" y="36" width="8" height="14" rx="2" fill="#fbbf24"></rect><rect class="bar" x="28" y="26" width="8" height="24" rx="2" fill="#fff"></rect><rect class="bar" x="42" y="14" width="8" height="36" rx="2" fill="#fff"></rect></svg> <span class="logo-text">Buisiness<em>today</em></span> </a> <p class="strapline">World Business • Economy • Markets • Tech • Startups • Real Estate</p> </div> <nav class="nav" id="site-nav" aria-label="Primary"> <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu"> <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg> <span>Menu</span> </button> <ul class="nav-list" id="primary-menu"> <li><a href="/">Home</a></li> <li class="has-sub">  <a href="/category/world/">World Business</a>  <button class="sub-toggle" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="sub-world" aria-label="World Business topics"> <svg viewBox="0 0 12 12" width="12" height="12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg> </button> <ul class="sub" id="sub-world"> <li><a href="/category/world/energy/">Energy</a></li> </ul>  </li><li>  <a href="/category/economy/">Economy</a>  </li><li class="has-sub">  <a href="/category/markets/">Markets &amp; Finance</a>  <button class="sub-toggle" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="sub-markets" aria-label="Markets &#38; Finance topics"> <svg viewBox="0 0 12 12" width="12" height="12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg> </button> <ul class="sub" id="sub-markets"> <li><a href="/category/markets/crypto/">Crypto</a></li><li><a href="/category/markets/banking/">Banking</a></li><li><a href="/category/markets/personal-finance/">Personal Finance</a></li> </ul>  </li><li class="has-sub">  <a href="/category/tech/" aria-current="true">Tech &amp; AI</a>  <button class="sub-toggle" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="sub-tech" aria-label="Tech &#38; AI topics"> <svg viewBox="0 0 12 12" width="12" height="12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg> </button> <ul class="sub" id="sub-tech"> <li><a href="/category/tech/cybersecurity/">Cybersecurity</a></li><li><a href="/category/tech/software-saas/">Software &amp; SaaS</a></li> </ul>  </li><li class="has-sub">  <a href="/category/smes/">SMEs &amp; Startups</a>  <button class="sub-toggle" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="sub-smes" aria-label="SMEs &#38; Startups topics"> <svg viewBox="0 0 12 12" width="12" height="12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg> </button> <ul class="sub" id="sub-smes"> <li><a href="/category/smes/funding/">Funding</a></li> </ul>  </li><li>  <a href="/category/marketing/">Marketing</a>  </li><li>  <a href="/category/property/">Real Estate</a>  </li><li>  <a href="/category/healthcare/">Healthcare</a>  </li> </ul> </nav> <div class="breaking" aria-label="Breaking news"> <span class="breaking-label">Breaking News</span> <div class="breaking-track"> <!-- The list is printed twice so the scroll loops without a gap. --> <div class="breaking-move"> <ul> <li><a href="/marketing/allysplay-com-review-gaming-blog/">Allysplay.com: What the Gaming Website Is, Who &#39;Steven Molly&#39; Is and What We Checked</a></li><li><a href="/marketing/quotebless-com-review-what-it-is/">Quotebless.com: What the Quotes and Blessings Site Is, Who Runs It and What We Checked</a></li><li><a href="/marketing/safetrode-com-review-what-it-is/">Safetrode.com: What the Site Is, Who Runs It and Whether It Is Safe to Read</a></li><li><a href="/healthcare/novartis-capital-markets-day-2026-peak-sales-outlook/">Novartis Raises Peak Sales Forecast for Three Key Drugs to $18 Billion, but Shares Fall</a></li><li><a href="/world/musk-zelenskyy-starshield-starlink-speed-limits-ukraine/">Musk Accuses Zelenskyy of Not Being Truthful Over Starshield Speed Limits in Ukraine</a></li><li><a href="/economy/us-midterms-economy-inflation-gas-prices-iran-war/">A Strong Economy, an Angry Electorate: Why Inflation and the Iran War Cost Republicans the Midterms</a></li><li><a href="/economy/gensler-ai-bubble-recession-warning/">Former SEC Chair Gary Gensler Says AI Is &#39;Already a Bubble&#39; That Could Cause a Recession Before 2028</a></li><li><a href="/economy/us-holiday-hiring-2026-seasonal-jobs/">US Holiday Hiring 2026: Seasonal Jobs Up, but Fewer Employers and a Tough Market for Full-Time Work</a></li> </ul> <ul aria-hidden="true"> <li><a href="/marketing/allysplay-com-review-gaming-blog/" tabindex="-1">Allysplay.com: What the Gaming Website Is, Who &#39;Steven Molly&#39; Is and What We Checked</a></li><li><a href="/marketing/quotebless-com-review-what-it-is/" tabindex="-1">Quotebless.com: What the Quotes and Blessings Site Is, Who Runs It and What We Checked</a></li><li><a href="/marketing/safetrode-com-review-what-it-is/" tabindex="-1">Safetrode.com: What the Site Is, Who Runs It and Whether It Is Safe to Read</a></li><li><a href="/healthcare/novartis-capital-markets-day-2026-peak-sales-outlook/" tabindex="-1">Novartis Raises Peak Sales Forecast for Three Key Drugs to $18 Billion, but Shares Fall</a></li><li><a href="/world/musk-zelenskyy-starshield-starlink-speed-limits-ukraine/" tabindex="-1">Musk Accuses Zelenskyy of Not Being Truthful Over Starshield Speed Limits in Ukraine</a></li><li><a href="/economy/us-midterms-economy-inflation-gas-prices-iran-war/" tabindex="-1">A Strong Economy, an Angry Electorate: Why Inflation and the Iran War Cost Republicans the Midterms</a></li><li><a href="/economy/gensler-ai-bubble-recession-warning/" tabindex="-1">Former SEC Chair Gary Gensler Says AI Is &#39;Already a Bubble&#39; That Could Cause a Recession Before 2028</a></li><li><a href="/economy/us-holiday-hiring-2026-seasonal-jobs/" tabindex="-1">US Holiday Hiring 2026: Seasonal Jobs Up, but Fewer Employers and a Tough Market for Full-Time Work</a></li> </ul> </div> </div> </div> </header> <main id="main"> <div class="wrap"> <article class="article" style="--cat:#7c3aed"> <header class="article-head"> <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/category/tech/">Tech &amp; AI</a> › <a href="/category/tech/cybersecurity/">Cybersecurity</a></nav> <a class="badge badge-link" href="/category/tech/cybersecurity/">Cybersecurity</a> <h1>How to Choose Identity Verification Software: What to Test Before You Sign a KYC Contract</h1> <p class="dek">Vendors of digital KYC all claim high accuracy. Here are the standards that matter, the numbers to ask for and a seven-part test to run on your own customers first.</p> <div class="byline"> <span class="by-author"> <img src="/icon-192.png" width="32" height="32" alt="" loading="lazy" decoding="async"> <a href="/author/editorial-desk/" rel="author">Editorial Desk</a> </span> <span>Published <time datetime="2026-11-16T15:18:00Z">16 Nov 2026, 8:48 pm IST</time></span>  <span>6 min read</span> </div> </header> <div class="article-layout"> <div class="article-main"> <figure class="hero"> <img src="/images/v/indian-passport-cover-1600x900.jpg" srcset="/images/v/indian-passport-cover-800x450.jpg 800w, /images/v/indian-passport-cover-1200x675.jpg 1200w, /images/v/indian-passport-cover-1600x900.jpg 1600w" sizes="(max-width: 1000px) calc(100vw - 32px), 800px" width="1600" height="900" alt="A dark blue Indian passport with the national emblem and a biometric chip symbol in gold on its cover, lying on a wooden table" loading="eager" fetchpriority="high"> <figcaption>An Indian biometric passport. Photo: Gpkp / Wikimedia Commons (CC BY-SA 4.0)</figcaption> </figure> <div class="share"> <span class="share-label">Share</span> <a href="https://wa.me/?text=How%20to%20Choose%20Identity%20Verification%20Software%3A%20What%20to%20Test%20Before%20You%20Sign%20a%20KYC%20Contract%20https%3A%2F%2Fbuisinesstoday.com%2Ftech%2Fhow-to-choose-identity-verification-kyc-software%2F" target="_blank" rel="noopener">WhatsApp</a> <a href="https://x.com/intent/post?text=How%20to%20Choose%20Identity%20Verification%20Software%3A%20What%20to%20Test%20Before%20You%20Sign%20a%20KYC%20Contract&url=https%3A%2F%2Fbuisinesstoday.com%2Ftech%2Fhow-to-choose-identity-verification-kyc-software%2F" target="_blank" rel="noopener">X</a> <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fbuisinesstoday.com%2Ftech%2Fhow-to-choose-identity-verification-kyc-software%2F" target="_blank" rel="noopener">LinkedIn</a> <button type="button" id="copyLink" data-url="https://buisinesstoday.com/tech/how-to-choose-identity-verification-kyc-software/">Copy link</button> </div> <div class="prose"><p>Any business that opens accounts online, from a bank or a lending app to a crypto exchange or a gaming platform, has to answer one question about every new customer: is this person who they say they are?</p>
+<p>Most buy the answer from a specialist. Identity verification software checks a photograph of an identity document, compares it with a selfie or a short video, and decides in seconds whether to let the customer in.</p>
+<p>Every vendor claims to be fast and accurate. The claims are hard to compare, and the cost of choosing badly is high: fraud losses if the system is too lenient, lost customers if it is too strict, and regulatory trouble either way. This guide sets out what to test.</p>
+<h2 id="key-points">Key points</h2>
+<ul>
+<li>Test vendors on your own customers and documents. A vendor’s demonstration proves little.</li>
+<li>Ask for results against published standards, and for the name of the laboratory that did the testing.</li>
+<li>Deepfakes have changed the threat. A system must detect fake video fed directly into the app, as well as a photo held up to the camera.</li>
+<li>Read the contract as carefully as the technical report.</li>
+</ul>
+<h2 id="the-two-ways-these-systems-fail">The two ways these systems fail</h2>
+<p><strong>Letting the wrong person in.</strong> A fraudster passes with a stolen or forged document, or with a synthetic face. The business takes the loss and may face penalties.</p>
+<p><strong>Keeping the right person out.</strong> A genuine customer is rejected because of poor lighting, an older phone or an unfamiliar document. They give up and go to a competitor.</p>
+<p>Tightening one usually worsens the other. A good evaluation measures both.</p>
+<h2 id="the-standards-worth-knowing">The standards worth knowing</h2>
+<p>A buyer does not need to read these documents, but should know what they cover.</p>
+<p><strong>NIST SP 800-63A.</strong> The US National Institute of Standards and Technology publishes guidance on identity proofing that is widely used as a benchmark. <a href="https://pages.nist.gov/800-63-4/sp800-63a.html">Its current version</a> sets out measurable thresholds, including:</p>
+<table>
+<thead>
+<tr>
+<th>Measure</th>
+<th>Threshold in the NIST guidance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Face matching: wrongly matching two different people</td>
+<td>No more than 1 in 10,000</td>
+</tr>
+<tr>
+<td>Face matching: wrongly rejecting the same person</td>
+<td>No more than 1 in 100</td>
+</tr>
+<tr>
+<td>Fake-presentation attacks accepted</td>
+<td>Less than 7%</td>
+</tr>
+<tr>
+<td>Forged documents accepted</td>
+<td>No more than 10%</td>
+</tr>
+<tr>
+<td>Difference in performance between demographic groups</td>
+<td>No more than 25% worse than the overall rate</td>
+</tr>
+</tbody>
+</table>
+<p>The guidance also requires controls to detect virtual cameras, emulated devices and manipulated media, and it bars the use of knowledge-based questions, such as “what was your first school”, as a means of verifying identity.</p>
+<p><strong>ISO/IEC 30107-3.</strong> This is the international standard for testing whether a system can tell a live person from a photograph, mask or screen. Two cautions apply. It does not cover injection attacks, in which fake video is fed straight into the software. And “ISO compliant” means little unless the vendor names the laboratory, the date and the result.</p>
+<h2 id="a-seven-part-test">A seven-part test</h2>
+<p>Score each vendor from 1 to 5 on each part, weight the parts by what matters to your business, and run the test on a few hundred real verifications before signing.</p>
+<ol>
+<li>
+<p><strong>Accuracy on your users.</strong> Measure how many genuine customers pass at the first attempt, and how many test fraud attempts get through. Break the results down by document type, phone model and region. An average hides the group that is failing.</p>
+</li>
+<li>
+<p><strong>Defence against spoofing.</strong> Try the attacks yourself: a printed photo, a video played on a second screen, an edited identity document. Ask specifically how the system detects injected video and AI-generated faces.</p>
+</li>
+<li>
+<p><strong>Coverage.</strong> Check that it reads the documents your customers hold, in the scripts they use. A system tuned for European passports may struggle elsewhere.</p>
+</li>
+<li>
+<p><strong>Customer experience.</strong> Time the process from start to decision. See what a customer is told when something fails, and whether they can switch from laptop to phone without starting again.</p>
+</li>
+<li>
+<p><strong>Control.</strong> Find out whether your own team can adjust thresholds, add a manual review step or create a lighter process for low-risk customers without paying for development work.</p>
+</li>
+<li>
+<p><strong>Compliance and records.</strong> You must be able to show a regulator why each decision was made. Check the audit trail, where data is stored, how long it is kept and whether records can be exported.</p>
+</li>
+<li>
+<p><strong>The contract.</strong> Establish what counts as a billable check, including failed and repeated attempts. Look at minimum volumes, price rises on renewal, penalties if the service is down, and your right to take your data with you if you leave.</p>
+</li>
+</ol>
+<p>Ask each finalist for two customers in your own industry and put one question to them: what surprised you after you went live?</p>
+<h2 id="warning-signs">Warning signs</h2>
+<ul>
+<li>A single accuracy figure with no explanation of how it was measured.</li>
+<li>“Certified” with no named laboratory.</li>
+<li>Reluctance to allow a trial on your own data.</li>
+<li>Results reported only as an overall average.</li>
+<li>A price that rises sharply once volumes pass a threshold.</li>
+</ul>
+<h2 id="for-indian-businesses">For Indian businesses</h2>
+<p>India has its own rules, and they come first.</p>
+<p><strong>Regulated entities.</strong> Banks, non-bank lenders and payment companies must follow the Reserve Bank of India’s KYC directions. These allow remote onboarding through a video-based customer identification process, which must be a live session conducted by a trained official of the regulated entity, with checks that the customer is physically in India and that the face is live. The directions have been amended several times, so work from the current text on the RBI’s website and not from a vendor’s summary.</p>
+<p><strong>Indian documents.</strong> Aadhaar, PAN, voter identity cards and driving licences issued by different states vary widely in format. Test with the documents your customers actually use, including older and worn ones.</p>
+<p><strong>Verification at source.</strong> Where the law permits, checking a document directly against the issuing database, for example through DigiLocker or Aadhaar-based e-KYC, is stronger than analysing a photograph of it.</p>
+<p><strong>Data protection.</strong> The Digital Personal Data Protection Act places duties on any business handling personal data, and biometric information is among the most sensitive. Establish where the vendor stores data, who else can access it and how it is deleted.</p>
+<p><strong>Marketing is not approval.</strong> A vendor describing itself as compliant with a regulator’s rules has not been approved by that regulator. Responsibility stays with the regulated business.</p>
+<h2 id="the-deepfake-problem">The deepfake problem</h2>
+<p>Tools for generating convincing fake faces and video are now cheap. That has moved the weak point. Earlier systems asked a user to blink or turn their head to prove they were real. A modern attack bypasses the camera altogether and feeds a synthetic video into the app.</p>
+<p>This is why the current NIST guidance asks for detection of virtual cameras and emulators, analysis of media for signs of manipulation, and unpredictable prompts during live sessions. When assessing a vendor, ask how often its detection is updated and whether it has been tested by an independent team trying to break it.</p>
+<p>The same shift is affecting ordinary users, as scams built on cloned voices and faces spread. Our report on <a href="/tech/dh58goh9-7-software-does-not-exist/">how to check whether an unfamiliar piece of software is real</a> covers the basic habits that still work.</p>
+<p><em>This article is general information and not legal or compliance advice. Regulated businesses should rely on the current text of the applicable rules and on qualified advisers. It draws on NIST Special Publication 800-63A and on publicly available descriptions of ISO/IEC 30107-3 and the Reserve Bank of India’s KYC framework.</em></p></div> <ul class="tags" aria-label="Topics"><li>#KYC</li><li>#Identity Verification</li><li>#Fintech</li><li>#Fraud Prevention</li><li>#Deepfakes</li><li>#Compliance</li></ul> <p class="note">This article is for general information only and is not financial, investment, medical or legal advice. See our <a href="/disclaimer/">disclaimer</a>.</p> <div class="author-box"> <img src="/icon-192.png" width="64" height="64" alt="" loading="lazy" decoding="async"> <div> <p class="author-name"><a href="/author/editorial-desk/" rel="author">Editorial Desk</a></p> <p class="author-role">Editorial Desk, Buisinesstoday</p> <p>The Editorial Desk is the in-house news team of Buisinesstoday. It reports and edits stories on business, markets, technology, startups and property, and checks every story against published sources before it goes live.</p> <a class="author-more" href="/author/editorial-desk/">More from Editorial Desk →</a> </div> </div> </div> <aside class="article-side" aria-label="Related stories and contact"> <div class="widget"> <h2 class="widget-title">Related Stories</h2> <article class="side-story" style="--cat:#7c3aed"> <a href="/tech/facestealer-fake-video-call-scam-fbi-warning/" class="side-thumb" tabindex="-1" aria-hidden="true"> <img src="/images/v/video-conference-on-laptop-400x400.jpg" width="400" height="400" alt="A laptop on a desk showing a video call with two participants whose faces are blurred out" loading="lazy" decoding="async"> </a> <div> <span class="kicker">Cybersecurity</span> <h3><a href="/tech/facestealer-fake-video-call-scam-fbi-warning/">FaceStealer: How Fake Video Calls Turn Your Webcam Into Bait, and How to Stop It</a></h3> <time class="side-date" datetime="2026-11-17T15:44:00Z">17 Nov 2026, 9:14 pm IST</time> </div> </article><article class="side-story" style="--cat:#7c3aed"> <a href="/tech/connectwise-screenconnect-attacks-msp-warning/" class="side-thumb" tabindex="-1" aria-hidden="true"> <img src="/images/v/server-racks-in-server-room-400x400.jpg" width="400" height="400" alt="Open black equipment racks filled with servers and network switches with yellow cables, in an office server room with boxes on a table beside them" loading="lazy" decoding="async"> </a> <div> <span class="kicker">Cybersecurity</span> <h3><a href="/tech/connectwise-screenconnect-attacks-msp-warning/">ConnectWise Warns ScreenConnect Attacks Are Continuing: What IT Service Providers Must Check</a></h3> <time class="side-date" datetime="2026-11-17T15:40:00Z">17 Nov 2026, 9:10 pm IST</time> </div> </article><article class="side-story" style="--cat:#7c3aed"> <a href="/tech/apple-macos-app-permissions-ai-agents/" class="side-thumb" tabindex="-1" aria-hidden="true"> <img src="/images/v/macbook-pro-14-keyboard-400x400.jpg" width="400" height="400" alt="A close-up of a dark laptop keyboard showing the command and option keys, lit by a purple glow from the screen above" loading="lazy" decoding="async"> </a> <div> <span class="kicker">Cybersecurity</span> <h3><a href="/tech/apple-macos-app-permissions-ai-agents/">Apple Tightens Mac App Permissions as AI Agents Ask for More Access</a></h3> <time class="side-date" datetime="2026-11-17T15:38:00Z">17 Nov 2026, 9:08 pm IST</time> </div> </article><article class="side-story" style="--cat:#7c3aed"> <a href="/tech/gitdoor-graphdoor-backdoors-github-microsoft-graph-governments/" class="side-thumb" tabindex="-1" aria-hidden="true"> <img src="/images/v/server-racks-national-archives-400x400.jpg" width="400" height="400" alt="A long aisle between rows of black computer server cabinets lit by small green and blue lights, with cable trays on the ceiling" loading="lazy" decoding="async"> </a> <div> <span class="kicker">Cybersecurity</span> <h3><a href="/tech/gitdoor-graphdoor-backdoors-github-microsoft-graph-governments/">GitDoor and GraphDoor: Spy Tools Hide Their Traffic in GitHub and Microsoft 365</a></h3> <time class="side-date" datetime="2026-11-17T15:36:00Z">17 Nov 2026, 9:06 pm IST</time> </div> </article> </div> <div class="widget widget-dark"> <h2 class="widget-title">Contact the Desk</h2> <p>Have a tip, a correction or a question about this story? Send it to our editors.</p> <a class="btn" href="mailto:contact@buisinesstoday.com?subject=Re%3A%20How%20to%20Choose%20Identity%20Verification%20Software%3A%20What%20to%20Test%20Before%20You%20Sign%20a%20KYC%20Contract">Email the editors</a> <p class="widget-small">contact@buisinesstoday.com</p> </div> </aside> </div> </article> <script>
+    (function () {
+      var b = document.getElementById('copyLink');
+      if (!b || !navigator.clipboard) return;
+      b.addEventListener('click', function () {
+        navigator.clipboard.writeText(b.dataset.url).then(function () {
+          b.textContent = 'Copied';
+          setTimeout(function () { b.textContent = 'Copy link'; }, 2000);
+        });
+      });
+    })();
+  </script> </div> </main> <footer class="site-footer"> <div class="wrap"> <div class="foot-grid"> <div class="foot-about"> <p class="foot-brand">Buisiness<em>today</em></p> <p>Buisinesstoday covers world business news, the economy, markets and finance, technology and AI, SMEs and startups, and real estate with clear, independent reporting.</p> <p>Email: <a href="mailto:contact@buisinesstoday.com">contact@buisinesstoday.com</a></p> </div> <nav aria-label="Sections"> <p class="foot-head">Sections</p> <ul><li><a href="/category/world/">World Business</a></li><li><a href="/category/economy/">Economy</a></li><li><a href="/category/markets/">Markets &amp; Finance</a></li><li><a href="/category/tech/">Tech &amp; AI</a></li><li><a href="/category/smes/">SMEs &amp; Startups</a></li><li><a href="/category/marketing/">Marketing</a></li><li><a href="/category/property/">Real Estate</a></li><li><a href="/category/healthcare/">Healthcare</a></li></ul> </nav> <nav aria-label="Company"> <p class="foot-head">Company</p> <ul> <li><a href="/">Home</a></li> <li><a href="/category/all/">All News</a></li> <li><a href="/author/editorial-desk/">Editorial Desk</a></li> <li><a href="/about/">About Us</a></li> <li><a href="/editorial-standards/">Editorial Standards</a></li> <li><a href="/contact/">Contact Us</a></li> <li><a href="/privacy-policy/">Privacy Policy</a></li> <li><a href="/terms/">Terms of Use</a></li> <li><a href="/disclaimer/">Disclaimer</a></li> <li><a href="/rss.xml">RSS Feed</a></li> </ul> </nav> </div> <div class="copy"> <p>© 2026 Buisinesstoday. All rights reserved.</p> <p><a href="/about/">About</a> · <a href="/privacy-policy/">Privacy</a> · <a href="/terms/">Terms</a> · <a href="/editorial-standards/#corrections">Corrections</a></p> </div> </div> </footer> <script>
+      // Main menu: the mobile "Menu" button, and the subcategory dropdowns
+      // (hover on desktop, tap on touch screens, Tab / Enter / Esc on a keyboard).
+      (function () {
+        var nav = document.getElementById('site-nav');
+        if (!nav) return;
+        var toggle = nav.querySelector('.nav-toggle');
+        var items = nav.querySelectorAll('.has-sub');
+        var desktop = window.matchMedia('(min-width: 1101px)');
+
+        function setOpen(li, open) {
+          li.classList.toggle('open', open);
+          li.querySelector('.sub-toggle').setAttribute('aria-expanded', open ? 'true' : 'false');
+        }
+        function closeAll(except) {
+          items.forEach(function (li) { if (li !== except) { setOpen(li, false); li.classList.remove('closed'); } });
+        }
+
+        toggle.addEventListener('click', function () {
+          var open = nav.classList.toggle('open');
+          toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+          if (!open) closeAll();
+        });
+
+        items.forEach(function (li) {
+          var btn = li.querySelector('.sub-toggle');
+          btn.addEventListener('click', function () {
+            var open = btn.getAttribute('aria-expanded') !== 'true';
+            closeAll(li);
+            setOpen(li, open);
+            li.classList.toggle('closed', !open); // keeps it shut while the pointer is still over it
+          });
+          // Desktop: opening on hover or keyboard focus is done in CSS; keep aria-expanded in step.
+          li.addEventListener('mouseenter', function () { if (desktop.matches && !li.classList.contains('closed')) btn.setAttribute('aria-expanded', 'true'); });
+          li.addEventListener('mouseleave', function () { if (desktop.matches) { setOpen(li, false); li.classList.remove('closed'); } });
+          li.addEventListener('focusin', function () { if (desktop.matches && !li.classList.contains('closed')) btn.setAttribute('aria-expanded', 'true'); });
+          li.addEventListener('focusout', function (e) {
+            if (desktop.matches && !li.contains(e.relatedTarget)) { setOpen(li, false); li.classList.remove('closed'); }
+          });
+          li.addEventListener('keydown', function (e) {
+            if (e.key !== 'Escape' || btn.getAttribute('aria-expanded') !== 'true') return;
+            e.stopPropagation();
+            setOpen(li, false);
+            li.classList.add('closed');
+            btn.focus();
+          });
+        });
+
+        // Esc closes the mobile menu; a click or tap outside closes everything.
+        nav.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && nav.classList.contains('open')) {
+            nav.classList.remove('open');
+            toggle.setAttribute('aria-expanded', 'false');
+            toggle.focus();
+          }
+        });
+        document.addEventListener('click', function (e) {
+          if (nav.contains(e.target)) return;
+          closeAll();
+          if (nav.classList.contains('open')) { nav.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); }
+        });
+      })();
+    </script> <script>
+      // Light / dark switch. The choice is remembered on this device; until one
+      // is made, the page follows the device setting, including when it changes.
+      (function () {
+        var root = document.documentElement;
+        var btn = document.getElementById('theme-toggle');
+        var meta = document.querySelector('meta[name="theme-color"]');
+        function apply(theme) {
+          root.setAttribute('data-theme', theme);
+          if (meta) meta.setAttribute('content', theme === 'dark' ? '#0f1216' : '#0b2545');
+          if (btn) btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+        }
+        apply(root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light');
+        if (btn) btn.addEventListener('click', function () {
+          var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+          apply(next);
+          try { localStorage.setItem('theme', next); } catch (e) {}
+        });
+        var mq = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
+        if (mq && mq.addEventListener) mq.addEventListener('change', function (e) {
+          var saved = null;
+          try { saved = localStorage.getItem('theme'); } catch (err) {}
+          if (saved !== 'dark' && saved !== 'light') apply(e.matches ? 'dark' : 'light');
+        });
+      })();
+    </script> <script>
+      // "5 min ago", "3 hours ago", "2 days ago" next to each story's date and time,
+      // for the past week. Stories with a date but no time of day are left as they are.
+      (function () {
+        var times = document.querySelectorAll('time[datetime]');
+        function ago(ms) {
+          var m = Math.floor(ms / 60000);
+          if (m < 1) return 'Just now';
+          if (m < 60) return m + ' min ago';
+          var h = Math.floor(m / 60);
+          if (h < 24) return h + (h === 1 ? ' hour ago' : ' hours ago');
+          var d = Math.floor(h / 24);
+          if (d < 7) return d === 1 ? 'Yesterday' : d + ' days ago';
+          return '';
+        }
+        function update() {
+          var now = Date.now();
+          times.forEach(function (t) {
+            var iso = t.getAttribute('datetime');
+            if (!iso || /T00:00:00(\.000)?Z$/.test(iso)) return;
+            var when = Date.parse(iso);
+            if (isNaN(when)) return;
+            var label = now >= when ? ago(now - when) : '';
+            var tag = t.nextElementSibling && t.nextElementSibling.classList.contains('ago') ? t.nextElementSibling : null;
+            if (!label) { if (tag) tag.remove(); return; }
+            if (!tag) { tag = document.createElement('span'); tag.className = 'ago'; t.insertAdjacentElement('afterend', tag); }
+            tag.textContent = label;
+          });
+        }
+        update();
+        setInterval(update, 60000);
+      })();
+    </script> <script>
+      document.getElementById('today').textContent = new Date().toLocaleDateString('en-IN', {
+        weekday: 'long', day: 'numeric', month: 'long', year: 'numeric',
+      });
+    </script> </body> </html>

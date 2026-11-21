@@ -1,0 +1,24 @@
+# Buisinesstoday
+# https://buisinesstoday.com/robots.txt
+
+# All crawlers
+User-agent: *
+Allow: /
+
+# AI crawlers - explicitly permitted
+User-agent: GPTBot
+User-agent: ChatGPT-User
+User-agent: OAI-SearchBot
+User-agent: ClaudeBot
+User-agent: Claude-User
+User-agent: Claude-SearchBot
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: CCBot
+User-agent: meta-externalagent
+Allow: /
+
+Sitemap: https://buisinesstoday.com/sitemap_index.xml
+Sitemap: https://buisinesstoday.com/news-sitemap.xml
