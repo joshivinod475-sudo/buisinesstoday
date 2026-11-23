@@ -4,7 +4,7 @@ description: "When the RBI changes the repo rate, millions of loan EMIs follow. 
 date: 2026-11-10
 category: personal-finance
 image: /images/laptop-on-cafe-table.jpg
-imageAlt: "Bank building with a financial district skyline in the background"
+imageAlt: "A hand typing on a MacBook Pro laptop showing a web page about increasing revenue, on a wooden café table beside a glass of iced tea, a smartphone and a notebook"
 ---
 
 Every couple of months, the Reserve Bank of India (RBI) announces whether it is changing the **repo rate**. The announcement makes headlines because it reaches all the way into your monthly budget, through the EMI on your home or car loan.
