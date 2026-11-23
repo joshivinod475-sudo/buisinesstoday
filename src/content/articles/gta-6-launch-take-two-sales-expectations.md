@@ -2,7 +2,7 @@
 title: "GTA VI Launches on 19 November: What Take-Two Needs From the Biggest Game Release in Years"
 description: "Grand Theft Auto VI goes on sale on Thursday after two delays. Here are the pre-order estimates, what analysts expect and what the launch means for Take-Two's investors."
 date: 2026-11-17T09:26:00+05:30
-updated: 2026-11-18T20:34:00+05:30
+updated: 2026-11-23T21:24:00+05:30
 category: tech
 image: /images/playstation-5-dualsense-controller-black.jpg
 imageAlt: "A black PlayStation 5 game controller seen from the front, with two thumbsticks, a directional pad and four action buttons"
@@ -13,6 +13,17 @@ tags: ["GTA VI", "Take-Two Interactive", "Video Games", "Rockstar Games", "Gamin
 Grand Theft Auto VI goes on sale on Thursday, 19 November. It is the first new game in the series in 13 years, it was delayed twice, and analysts expect it to be the largest launch the video game industry has seen.
 
 For Take-Two Interactive, the US company that owns the game's maker, Rockstar Games, a great deal of its financial year depends on the next few weeks.
+
+## Update, 23 November: what happened on launch day
+
+*GTA VI* launched worldwide on 19 November. The main takeaways from release week:
+
+- **Record sales, by estimate.** Sensor Tower estimates about 19 million copies and $1.84 billion in revenue by launch day, more than double *GTA V*'s first day. Take-Two has not confirmed the figures. We break down the numbers in our [report on GTA VI's first-day sales](/tech/gta-6-first-day-sales-record-1-84-billion/).
+- **PlayStation dominates.** About three-quarters of estimated sales were on PS5.
+- **30 frames per second.** The game runs at 30 fps on every console, including the PS5 Pro, with no 60 fps performance mode, a point of criticism among players.
+- **Bugs and outages.** Players reported glitches such as characters falling through the map, and a PlayStation Network outage hit some users on launch night.
+- **Mixed technical reviews.** Critics praised the scale and detail of Vice City but noted technical problems.
+- **A cultural event.** Some employers, including Logitech, gave staff a paid day off, and celebrity-hosted radio stations, including [Bad Bunny's Cocoteo FM](/tech/gta-6-radio-stations-bad-bunny-cocoteo-fm/), drew wide attention.
 
 ## Update, 18 November: the day-off question
 
