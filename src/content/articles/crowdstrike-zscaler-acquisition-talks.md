@@ -1,7 +1,8 @@
 ---
-title: "CrowdStrike in Talks to Buy Zscaler in What Could Be One of Cybersecurity's Biggest Deals"
-description: "Zscaler shares jumped 18% after Bloomberg reported CrowdStrike is in talks to acquire it. Here is why the deal makes sense, how it compares with past security mergers and the risks."
+title: "CrowdStrike Agrees to Buy Zscaler for About $44 Billion in One of Cybersecurity's Biggest Deals"
+description: "CrowdStrike will buy Zscaler in an all-stock deal worth about $43.9 billion, after Bloomberg first reported talks. Here are the terms, why the deal makes sense and the risks."
 date: 2026-11-21T23:13:00+05:30
+updated: 2026-11-24T20:45:00+05:30
 category: cybersecurity
 image: /images/server-racks-in-server-room.jpg
 imageAlt: "Open black equipment racks filled with servers and network switches with yellow cables, in an office server room with boxes on a table beside them"
@@ -12,6 +13,8 @@ tags: ["CrowdStrike", "Zscaler", "Cybersecurity", "Mergers and Acquisitions", "T
 CrowdStrike is in talks to buy Zscaler, Bloomberg reported on Friday, citing people familiar with the matter. Zscaler shares jumped 18% in extended trading after the report, while CrowdStrike shares fell more than 8%.
 
 CrowdStrike declined to comment. Zscaler did not immediately respond to a request for comment from CNBC. Talks are ongoing, and there is no guarantee a deal will be reached.
+
+**Update, 24 November: the deal is agreed.** CrowdStrike and Zscaler have announced an all-stock deal valuing Zscaler at about $43.9 billion, according to Zscaler's filing with the US Securities and Exchange Commission. Zscaler shareholders will receive 1.135 CrowdStrike shares for each share they own, about $260.41 per share based on CrowdStrike's closing price on 20 November, a premium of roughly 34%. CrowdStrike shareholders will own about 84.1% of the combined company, which will start with more than $10 billion in annual recurring revenue. CrowdStrike expects about $1 billion in annual revenue synergies within 30 months of closing. The deal still needs regulatory approval.
 
 ## Key points
 

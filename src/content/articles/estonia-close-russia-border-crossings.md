@@ -2,6 +2,7 @@
 title: "Estonia Plans to Close Its Road Border With Russia After an Arson Attack on a Drone Maker"
 description: "Estonia says it will shut its road crossings with Russia from 1 December, blaming Russian military intelligence for an attack on a defence firm. Moscow calls it Russophobia."
 date: 2026-11-16T20:28:00+05:30
+updated: 2026-11-24T20:45:00+05:30
 category: world
 image: /images/narva-river-estonia-russia-border.jpg
 imageAlt: "A river with a road bridge across it, a pale stone castle with a white tower on the left bank and a fortress on the right bank"
@@ -14,6 +15,12 @@ Estonia is preparing to close its road border crossings with Russia from 1 Decem
 The government of the Baltic state, a member of NATO and the European Union, said the attack on the company Threod Systems took place in the early hours of Saturday, CNBC reported. It caused no significant damage, and eight people have been detained.
 
 Russia did not respond directly to the accusation. Its foreign ministry called the planned closure "yet another bout of aggressive and unbridled Russophobia".
+
+## Update, 24 November: Russia warns of "open war"
+
+Russia's Foreign Ministry has accused Estonia of "hostile actions" and said its measures were "on the verge of unleashing open war" with Moscow, CNBC reported. The ministry lodged a formal protest with Estonia's chargé d'affaires, Marek Uhtegi, over the planned closure of road crossings from 1 December, and accused Tallinn of imposing a naval blockade, letting Ukrainian drones use its airspace and banning the transit of Russian and Belarusian grain.
+
+Estonia, which shares a 294-km border with Russia, denied allowing its territory to be used for military operations. Foreign Minister Margus Tsahkna said Moscow was trying to divert attention from its own actions, citing Russian missiles reaching Polish territory, an assassination plot uncovered in Denmark and the foiled arson attack on an Estonian defence company. The war's widening reach is covered in our report on [the latest Russian strike on Zaporizhzhia and Ukraine's attack in Libya](/world/russia-strike-zaporizhzhia-ukraine-libya-warship/).
 
 ## Key points
 

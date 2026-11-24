@@ -2,6 +2,7 @@
 title: "Nvidia's Board After Jensen Huang: A First-Ever Chair, a CEO Search and Hard Questions on Oversight"
 description: "Nvidia's directors accepted Jensen Huang's resignation, named their first chair and began a CEO search. Here is what the filings show and what the board has not said."
 date: 2026-11-15T18:46:00+05:30
+updated: 2026-11-24T20:45:00+05:30
 category: tech
 image: /images/nvidia-campus-solar-canopy-santa-clara.jpg
 imageAlt: "A large white steel canopy fitted with solar panels stands between two glass office buildings on Nvidia's campus, with a company sign by the road"
@@ -14,6 +15,8 @@ For 33 years Nvidia's board had one job that it never had to do: replace Jensen 
 The directors accepted Huang's resignation on 11 November, put the finance chief in charge on an interim basis and created a post the company had never had, a chair of the board. The spotlight has now moved from the former chief executive to the ten people who oversee the world's most valuable chipmaker, and to whether they were ready for this.
 
 Here is what the board has done, what the official filings show, and what remains unanswered.
+
+**Update, 24 November: Huang is back.** Nvidia's board has reversed course and reinstated Jensen Huang as chief executive, 11 days after he resigned, following an intervention by President Trump and a campaign by investors and employees. The board's internal investigation continues. Read our full report on [Huang's reinstatement and the remaining investigations](/tech/nvidia-reinstates-jensen-huang-ceo-investigations/).
 
 ## Key points
 
