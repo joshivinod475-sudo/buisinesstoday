@@ -2,6 +2,7 @@
 title: "'Social Media Ranking AelfTech.com': What the Site Is, What We Could Verify and What We Could Not"
 description: "AelfTech.com is a digital marketing agency website, and 'social media ranking' is its label for a service, not a ranking list. Here is what our checks found."
 date: 2026-11-15T23:27:00+05:30
+updated: 2026-11-24T20:57:00+05:30
 category: marketing
 image: /images/smartphone-showing-social-media-app.jpg
 imageAlt: "A smartphone lying on a wooden table with a social media app's menu open on its screen"
@@ -24,6 +25,21 @@ Buisinesstoday has no commercial relationship with AelfTech. We have not been pa
 - We found no independent list of "SEO companies 2025" or 2026 that includes the firm.
 - The site gives an email address but no street address, phone number or company registration number.
 - Its pages give two different locations: the United States on the home page and Australia on the team page.
+
+## Update, 24 November: what the "client case studies" show
+
+Many people now search for "client case aelftech.com". The phrase refers to a page on the agency's website titled [Client Case Studies](https://aelftech.com/client-case-studies/), which we read on 24 November 2026. It describes four campaigns:
+
+| Case study | Client as described | Results claimed |
+|---|---|---|
+| Local SEO | An HVAC and plumbing company in Chicago | 215% more calls from Google Maps; top-3 rankings for local searches |
+| E-commerce SEO | A fashion brand in New York | 450% growth in non-branded organic traffic; $1.2 million in extra annual revenue |
+| Google Ads (PPC) | A B2B fintech start-up in San Francisco | Conversion rate up from 2.1% to 8.5%; 40% of leads sales-qualified |
+| Website speed | A news publisher in Austin | Mobile PageSpeed score from 32 to 94; ad revenue up 18% |
+
+**What is missing.** None of the clients is named. The only testimonial is attributed to "Mike R., Owner". There are no dates, timeframes, screenshots of analytics or links to the clients' websites, and no third party has verified the figures. The case studies are therefore marketing claims, not evidence.
+
+That does not mean the results are false. Many agencies anonymise clients for confidentiality. But it does mean a business cannot check them. Before hiring any agency on the strength of case studies, ask to speak to a past client, request anonymised analytics reports and agree measurable targets in the contract, as set out in our checklist below.
 
 ## What the search terms actually lead to
 
