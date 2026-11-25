@@ -115,4 +115,4 @@ AelfTech.com is a live website that offers ordinary digital marketing services. 
 
 That is a reason to ask questions before hiring it, and the same questions should be put to any agency.
 
-*This article is general information and not a recommendation for or against any company. It is based on the public pages of aelftech.com and the public .com registry record, checked on 15 November 2026. We did not contact the company before publication. If AelfTech wishes to respond or correct anything, it can write to contact@buisinesstoday.com and we will update this article.*
+*This article is general information and not a recommendation for or against any company. It is based on the public pages of aelftech.com and the public .com registry record, checked on 15 November 2026. We did not contact the company before publication. If AelfTech wishes to respond or correct anything, it can write to jamesedvin999@gmail.com and we will update this article.*

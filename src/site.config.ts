@@ -9,7 +9,7 @@ export const SITE = {
   description:
     'Buisinesstoday covers world business news, the economy, markets and finance, technology and AI, SMEs and startups, and real estate with clear, independent reporting.',
   url: 'https://buisinesstoday.com',
-  email: 'contact@buisinesstoday.com',
+  email: 'jamesedvin999@gmail.com',
   locale: 'en-IN',
   language: 'en',
   timeZone: 'Asia/Kolkata',

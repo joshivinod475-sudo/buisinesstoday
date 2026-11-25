@@ -117,4 +117,4 @@ Through the form on its Contact Us page. We did not find an email address or pho
 **Who owns it?**
 The site does not say.
 
-*This article is general information and not a recommendation for or against any website. It is based on the public pages of tozymagazine.com and the public .com registry record, checked on 15 November 2026. We did not contact the site before publication. If its operators wish to respond or correct anything, they can write to contact@buisinesstoday.com and we will update this article.*
+*This article is general information and not a recommendation for or against any website. It is based on the public pages of tozymagazine.com and the public .com registry record, checked on 15 November 2026. We did not contact the site before publication. If its operators wish to respond or correct anything, they can write to jamesedvin999@gmail.com and we will update this article.*
